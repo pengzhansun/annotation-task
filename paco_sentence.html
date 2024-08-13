@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto; /* Container height adjusts to content */
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left; /* Ensure text within <p> tags is left-aligned */
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+    <!-- Include this JavaScript file for Amazon SageMaker Ground Truth -->
+    <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>${object}</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="${image_url}" alt="Task Image">
+        </div>
+        
+        <crowd-form answer-format="flatten-objects">
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>${primary_affordance}</strong></u></i> of the target object <i><u><strong>${object}</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="1"> Sentence 1: ${common_sentence_1}</label><br>
+                    <label><input type="radio" name="common_sentence" value="2"> Sentence 2: ${common_sentence_2}</label><br>
+                    <label><input type="radio" name="common_sentence" value="3"> Sentence 3: ${common_sentence_3}</label><br>
+                    <label><input type="radio" name="common_sentence" value="4"> Sentence 4: ${common_sentence_4}</label><br>
+                    <label><input type="radio" name="common_sentence" value="5"> Sentence 5: ${common_sentence_5}</label><br>
+                    <label><input type="radio" name="common_sentence" value="6"> None of the above is good enough</label><br>
+                </div>
+                <crowd-input name="common_utterance" placeholder="Type your revised sentence here..." required></crowd-input>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>${primary_affordance}</strong></u></i> of the target object <i><u><strong>${object}</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="1"> Sentence 1: ${uncommon_sentence_1}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="2"> Sentence 2: ${uncommon_sentence_2}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="3"> Sentence 3: ${uncommon_sentence_3}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="4"> Sentence 4: ${uncommon_sentence_4}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="5"> Sentence 5: ${uncommon_sentence_5}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="6"> None of the above is good enough</label><br>
+                </div>
+                <crowd-input name="uncommon_utterance" placeholder="Type your revised sentence here..." required></crowd-input>
+            </div>
+
+        </crowd-form>
+    </div>
+</body>
+</html>
