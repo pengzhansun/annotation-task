@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>hammer</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/9491.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/9491.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for hammering</strong></u></i> of the target object <i><u><strong>hammer</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: To get these pieces secured together, I really need something to drive those nails in properly."> Sentence 1: To get these pieces secured together, I really need something to drive those nails in properly.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: This project won’t move forward until I fasten those loose parts, and I could use a solid tool for the job."> Sentence 2: This project won’t move forward until I fasten those loose parts, and I could use a solid tool for the job.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: It looks like these components are still coming apart; I need something to help keep everything in place."> Sentence 3: It looks like these components are still coming apart; I need something to help keep everything in place.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: To finish assembling this, I’ll need some assistance getting these fasteners snugly driven in."> Sentence 4: To finish assembling this, I’ll need some assistance getting these fasteners snugly driven in.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I can’t complete this task without a tool that can connect the sections firmly together."> Sentence 5: I can’t complete this task without a tool that can connect the sections firmly together.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for hammering</strong></u></i> of the target object <i><u><strong>hammer</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need to secure this loose piece of wood, but I can’t find anything heavy enough to help me drive the nail in properly."> Sentence 1: I need to secure this loose piece of wood, but I can’t find anything heavy enough to help me drive the nail in properly.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: While assembling this furniture, I realized I need to join these sturdy pieces together, but my usual tools are missing."> Sentence 2: While assembling this furniture, I realized I need to join these sturdy pieces together, but my usual tools are missing.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: There’s a stubborn nail that won’t budge, and I can't seem to find a solid way to remove it without causing damage."> Sentence 3: There’s a stubborn nail that won’t budge, and I can't seem to find a solid way to remove it without causing damage.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I want to create a new garden trellis, but I need a way to firmly set these posts in place without my typical construction tools."> Sentence 4: I want to create a new garden trellis, but I need a way to firmly set these posts in place without my typical construction tools.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: To fix this broken fence panel, I need to ensure the nails are driven in tightly, but I currently lack a suitable tool to do that effectively."> Sentence 5: To fix this broken fence panel, I need to ensure the nails are driven in tightly, but I currently lack a suitable tool to do that effectively.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>car_(automobile)</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/7574.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/7574.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for driving</strong></u></i> of the target object <i><u><strong>car_(automobile)</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I need to get to the trailhead for our hiking trip, so I should probably start the engine soon."> Sentence 1: I need to get to the trailhead for our hiking trip, so I should probably start the engine soon.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: With all this gear loaded up, it's time to hit the road for the weekend getaway."> Sentence 2: With all this gear loaded up, it's time to hit the road for the weekend getaway.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: We can’t wait to explore the scenic drive, but we have to get moving soon."> Sentence 3: We can’t wait to explore the scenic drive, but we have to get moving soon.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: Since the weather is so nice, it’s the perfect day to take a drive to the park."> Sentence 4: Since the weather is so nice, it’s the perfect day to take a drive to the park.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: To make it to the picnic on time, we should really get on our way."> Sentence 5: To make it to the picnic on time, we should really get on our way.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for driving</strong></u></i> of the target object <i><u><strong>car_(automobile)</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: During our trip to the remote area, it would be ideal to have something sturdy that can hold our supplies and also provide a comfortable spot to relax when we take breaks."> Sentence 1: During our trip to the remote area, it would be ideal to have something sturdy that can hold our supplies and also provide a comfortable spot to relax when we take breaks.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: With the unpredictable weather, having something that offers us shelter and a cozy place to stay while we wait out the rain would be extremely beneficial."> Sentence 2: With the unpredictable weather, having something that offers us shelter and a cozy place to stay while we wait out the rain would be extremely beneficial.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: If we had an object that could transport both our gear and family, it would simplify our journey and allow us to have a mobile base for our adventures."> Sentence 3: If we had an object that could transport both our gear and family, it would simplify our journey and allow us to have a mobile base for our adventures.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: In case of unforeseen circumstances, having something nearby that can provide protective coverage and a space to rest would be invaluable during longer outings in nature."> Sentence 4: In case of unforeseen circumstances, having something nearby that can provide protective coverage and a space to rest would be invaluable during longer outings in nature.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: It would be great to have a means of transport that can also serve as a temporary refuge while we explore this beautiful landscape."> Sentence 5: It would be great to have a means of transport that can also serve as a temporary refuge while we explore this beautiful landscape.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

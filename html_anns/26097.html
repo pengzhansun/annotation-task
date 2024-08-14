@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>glass_(drink_container)</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/26097.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/26097.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for holding drinks</strong></u></i> of the target object <i><u><strong>glass_(drink_container)</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: "With all this cooking happening, it would be nice to have something to drink while I prepare the meal.""> Sentence 1: "With all this cooking happening, it would be nice to have something to drink while I prepare the meal."</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: "After handling the ingredients, I could really use something to sip from once I wash my hands.""> Sentence 2: "After handling the ingredients, I could really use something to sip from once I wash my hands."</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: "As we're mixing everything together, it would be great to have a container to enjoy some refreshing water.""> Sentence 3: "As we're mixing everything together, it would be great to have a container to enjoy some refreshing water."</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: "While we're busy in the kitchen, can we find something to pour our juice into for a quick refresh?""> Sentence 4: "While we're busy in the kitchen, can we find something to pour our juice into for a quick refresh?"</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: "It looks like we're all set with the food, but I could use a drink served in a glass to accompany our meal.""> Sentence 5: "It looks like we're all set with the food, but I could use a drink served in a glass to accompany our meal."</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for holding drinks</strong></u></i> of the target object <i><u><strong>glass_(drink_container)</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need a way to keep these freshly cut herbs submerged so they stay fresh while I cook."> Sentence 1: I need a way to keep these freshly cut herbs submerged so they stay fresh while I cook.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: I’m looking for a container that can help me showcase this colorful fruit garnish for my dessert."> Sentence 2: I’m looking for a container that can help me showcase this colorful fruit garnish for my dessert.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I need something to hold this mixture while it brews, rather than using my usual bowl."> Sentence 3: I need something to hold this mixture while it brews, rather than using my usual bowl.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I require a stable vessel to mix some ingredients together for a refreshing salad dressing."> Sentence 4: I require a stable vessel to mix some ingredients together for a refreshing salad dressing.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I need a temporary holder for these sugar cubes while I prepare beverages for our guests."> Sentence 5: I need a temporary holder for these sugar cubes while I prepare beverages for our guests.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

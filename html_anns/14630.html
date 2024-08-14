@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>clock</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/14630.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/14630.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for checking the time</strong></u></i> of the target object <i><u><strong>clock</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I really need to finish this project on time, but I keep losing track of how long I've been working."> Sentence 1: I really need to finish this project on time, but I keep losing track of how long I've been working.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: It’s important to keep an eye on the time while I’m getting ready for the meeting later."> Sentence 2: It’s important to keep an eye on the time while I’m getting ready for the meeting later.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: I want to make sure I don't miss my favorite show, so a quick glance at the time would help."> Sentence 3: I want to make sure I don't miss my favorite show, so a quick glance at the time would help.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: It’s hard to plan my tasks effectively without knowing how much time I have left in the day."> Sentence 4: It’s hard to plan my tasks effectively without knowing how much time I have left in the day.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I’d like to coordinate my activities better if I had a way to see the time from this spot."> Sentence 5: I’d like to coordinate my activities better if I had a way to see the time from this spot.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for checking the time</strong></u></i> of the target object <i><u><strong>clock</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need something that can serve as a decorative reminder of the passage of time while enhancing our vintage-inspired decor."> Sentence 1: I need something that can serve as a decorative reminder of the passage of time while enhancing our vintage-inspired decor.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: To help convey the importance of regularity, I require an item that can visually mark elapsed time during our group activities."> Sentence 2: To help convey the importance of regularity, I require an item that can visually mark elapsed time during our group activities.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I'm looking for a way to display the rhythm of daily life, and something that can elegantly signal the hours would be perfect for this purpose."> Sentence 3: I'm looking for a way to display the rhythm of daily life, and something that can elegantly signal the hours would be perfect for this purpose.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I need an object that can provide both function and charm, helping to manage our schedules while blending into our eclectic interior."> Sentence 4: I need an object that can provide both function and charm, helping to manage our schedules while blending into our eclectic interior.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: To highlight the concept of timing in our presentations, we require something that can serve as a focal point for discussions about punctuality and planning."> Sentence 5: To highlight the concept of timing in our presentations, we require something that can serve as a focal point for discussions about punctuality and planning.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

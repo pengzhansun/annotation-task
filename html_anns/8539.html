@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>drum_(musical_instrument)</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/8539.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/8539.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for playing music</strong></u></i> of the target object <i><u><strong>drum_(musical_instrument)</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: As the music starts to build, there’s a noticeable absence of the powerful beats that would typically drive the energy forward."> Sentence 1: As the music starts to build, there’s a noticeable absence of the powerful beats that would typically drive the energy forward.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: I’m feeling the rhythm in my bones, but it’s clear that the essential component creating those vibrant sounds is missing from our setup."> Sentence 2: I’m feeling the rhythm in my bones, but it’s clear that the essential component creating those vibrant sounds is missing from our setup.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: While the band prepares to jam, I can't help but notice the gap where the heartbeat of the ensemble usually resides."> Sentence 3: While the band prepares to jam, I can't help but notice the gap where the heartbeat of the ensemble usually resides.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: Everything's in place for a great session, but it would really come alive if the resonant thumps were present to elevate the sound."> Sentence 4: Everything's in place for a great session, but it would really come alive if the resonant thumps were present to elevate the sound.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: It's exciting to see the gear lined up, but I can sense that the flow of our performance is incomplete without that crucial element keeping time."> Sentence 5: It's exciting to see the gear lined up, but I can sense that the flow of our performance is incomplete without that crucial element keeping time.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for playing music</strong></u></i> of the target object <i><u><strong>drum_(musical_instrument)</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need a solid surface to create a rhythmic backdrop for our spontaneous jam session that can withstand some light tapping."> Sentence 1: I need a solid surface to create a rhythmic backdrop for our spontaneous jam session that can withstand some light tapping.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: It would be great to have something that can add depth to our sound while also serving as a makeshift seat for the performers during the break."> Sentence 2: It would be great to have something that can add depth to our sound while also serving as a makeshift seat for the performers during the break.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: We could use a robust and resonant body to amplify the sound when we want to rally everyone’s energy on the dance floor."> Sentence 3: We could use a robust and resonant body to amplify the sound when we want to rally everyone’s energy on the dance floor.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I require a sturdy object to strike that can help keep time as we form an impromptu band while gathering around our favorite tunes."> Sentence 4: I require a sturdy object to strike that can help keep time as we form an impromptu band while gathering around our favorite tunes.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I need a round, durable platform that can provide a focal point for our celebration and withstand a bit of excitement while we dance."> Sentence 5: I need a round, durable platform that can provide a focal point for our celebration and withstand a bit of excitement while we dance.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

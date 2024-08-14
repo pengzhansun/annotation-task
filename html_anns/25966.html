@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>mirror</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/25966.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/25966.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for grooming</strong></u></i> of the target object <i><u><strong>mirror</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I’d like to check my appearance as I get ready to head out, but I’m not sure how I look from the front."> Sentence 1: I’d like to check my appearance as I get ready to head out, but I’m not sure how I look from the front.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: Before I step outside, it would be great to confirm that my outfit looks put together, but there’s no way to see without a reflection."> Sentence 2: Before I step outside, it would be great to confirm that my outfit looks put together, but there’s no way to see without a reflection.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: I need to adjust my hair for that event later, but I can't get a good view without something to reflect back at me."> Sentence 3: I need to adjust my hair for that event later, but I can't get a good view without something to reflect back at me.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: It's important for me to see if my shirt is tucked in properly, but I'm struggling without a reflective surface nearby."> Sentence 4: It's important for me to see if my shirt is tucked in properly, but I'm struggling without a reflective surface nearby.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I want to give my outfit a final check before leaving, but I can't assess how everything looks without a way to see myself."> Sentence 5: I want to give my outfit a final check before leaving, but I can't assess how everything looks without a way to see myself.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for grooming</strong></u></i> of the target object <i><u><strong>mirror</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need a shiny surface to help me check the back of my head while styling my hair; can anything around here serve that purpose?"> Sentence 1: I need a shiny surface to help me check the back of my head while styling my hair; can anything around here serve that purpose?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: It’s hard to see my outfit in this low light; is there something I could use to reflect some light and get a better view?"> Sentence 2: It’s hard to see my outfit in this low light; is there something I could use to reflect some light and get a better view?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I’d like to visualize how the room feels, so I’m looking for a flat, reflective surface to create a sense of depth."> Sentence 3: I’d like to visualize how the room feels, so I’m looking for a flat, reflective surface to create a sense of depth.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: To make sure I look presentable before the meeting, I could really use a surface that helps me check my appearance from all angles."> Sentence 4: To make sure I look presentable before the meeting, I could really use a surface that helps me check my appearance from all angles.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: While working on this small project, it would be helpful to have something that allows me to see the details behind my workspace more clearly."> Sentence 5: While working on this small project, it would be helpful to have something that allows me to see the details behind my workspace more clearly.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

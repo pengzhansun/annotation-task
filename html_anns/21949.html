@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>scissors</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/21949.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/21949.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for cutting</strong></u></i> of the target object <i><u><strong>scissors</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I need something sharp to help me neatly open these packages under the table."> Sentence 1: I need something sharp to help me neatly open these packages under the table.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: To properly organize these containers, I should cut the labels off before stacking them."> Sentence 2: To properly organize these containers, I should cut the labels off before stacking them.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: It would be handy to have a tool to slice through this tape on the box."> Sentence 3: It would be handy to have a tool to slice through this tape on the box.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: I want to trim the excess wrap from these items before storing them away."> Sentence 4: I want to trim the excess wrap from these items before storing them away.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: If I could find a cutting tool, it would make it easier to separate these items for cleaning."> Sentence 5: If I could find a cutting tool, it would make it easier to separate these items for cleaning.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for cutting</strong></u></i> of the target object <i><u><strong>scissors</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need something sharp that can help me create clean edges on this paper for a crafting project I’m working on."> Sentence 1: I need something sharp that can help me create clean edges on this paper for a crafting project I’m working on.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: There’s some fabric here that needs precise cuts, and I require a tool that can handle delicate trimming effectively."> Sentence 2: There’s some fabric here that needs precise cuts, and I require a tool that can handle delicate trimming effectively.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: This packaging is quite challenging to get through; I need a tool that can slice it open quickly and easily."> Sentence 3: This packaging is quite challenging to get through; I need a tool that can slice it open quickly and easily.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I’m looking for a handy way to snip some fresh herbs from my garden, as I need something that can deliver a precise cut with minimal effort."> Sentence 4: I’m looking for a handy way to snip some fresh herbs from my garden, as I need something that can deliver a precise cut with minimal effort.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I need an efficient tool to help me separate photos from a larger sheet without damaging them, ideally something with sharp edges for a clean result."> Sentence 5: I need an efficient tool to help me separate photos from a larger sheet without damaging them, ideally something with sharp edges for a clean result.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

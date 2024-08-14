@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>trash_can</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/17327.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/17327.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>holding trash</strong></u></i> of the target object <i><u><strong>trash_can</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: As I'm cleaning up the garage, I need a place to toss these leftover bits of packaging and clutter."> Sentence 1: As I'm cleaning up the garage, I need a place to toss these leftover bits of packaging and clutter.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: With all these scraps and debris on the floor, I could really use somewhere to dispose of them properly."> Sentence 2: With all these scraps and debris on the floor, I could really use somewhere to dispose of them properly.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: While sorting through this mess, it would be helpful to have access to a bin for all these discarded items."> Sentence 3: While sorting through this mess, it would be helpful to have access to a bin for all these discarded items.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: As I organize the space, I should find a spot to get rid of these old materials and junk."> Sentence 4: As I organize the space, I should find a spot to get rid of these old materials and junk.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: It's time to declutter, and I need a convenient place to throw away these unnecessary items."> Sentence 5: It's time to declutter, and I need a convenient place to throw away these unnecessary items.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>holding trash</strong></u></i> of the target object <i><u><strong>trash_can</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need a strong container to hold all these broken branches from the yard cleanup."> Sentence 1: I need a strong container to hold all these broken branches from the yard cleanup.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: We could use something to collect these empty paint cans while we work on the garage project."> Sentence 2: We could use something to collect these empty paint cans while we work on the garage project.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I'm looking for a way to keep all this packing material contained until I can find a proper recycling method."> Sentence 3: I'm looking for a way to keep all this packing material contained until I can find a proper recycling method.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: We need a place to toss all the food scraps while we’re preparing the garden beds."> Sentence 4: We need a place to toss all the food scraps while we’re preparing the garden beds.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: Can you find something to hold these leftover garden clippings so they don’t clutter the patio?"> Sentence 5: Can you find something to hold these leftover garden clippings so they don’t clutter the patio?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

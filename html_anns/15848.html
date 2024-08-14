@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>tissue_paper</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/15848.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/15848.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for cleaning</strong></u></i> of the target object <i><u><strong>tissue_paper</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: After finishing this project, I really need something to clean my hands before I grab my tools again."> Sentence 1: After finishing this project, I really need something to clean my hands before I grab my tools again.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: I spilled a bit of paint over here, and I could use something to quickly wipe it up."> Sentence 2: I spilled a bit of paint over here, and I could use something to quickly wipe it up.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: With all this dust flying around, I need something to help me clear my nose before I continue working."> Sentence 3: With all this dust flying around, I need something to help me clear my nose before I continue working.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: That glue might get everywhere; I need something handy to keep my workspace tidy."> Sentence 4: That glue might get everywhere; I need something handy to keep my workspace tidy.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I want to clean my glasses after getting some smudges on them, but I need a quick way to do that."> Sentence 5: I want to clean my glasses after getting some smudges on them, but I need a quick way to do that.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for cleaning</strong></u></i> of the target object <i><u><strong>tissue_paper</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need something lightweight and absorbent to clean up this spill without leaving any residue behind—can you grab something nearby?"> Sentence 1: I need something lightweight and absorbent to clean up this spill without leaving any residue behind—can you grab something nearby?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: Could you find a soft, delicate material to help me dab this paint smudge on my shirt before it sets?"> Sentence 2: Could you find a soft, delicate material to help me dab this paint smudge on my shirt before it sets?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I’m looking for something thin and flexible that won’t damage this surface while I wipe away the dust—what do you suggest?"> Sentence 3: I’m looking for something thin and flexible that won’t damage this surface while I wipe away the dust—what do you suggest?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: Can you get me something that can quickly soak up the small amount of liquid I spilled over here without making a mess?"> Sentence 4: Can you get me something that can quickly soak up the small amount of liquid I spilled over here without making a mess?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I need to pat this freshly painted area gently to avoid smudging—what’s available that could help with that?"> Sentence 5: I need to pat this freshly painted area gently to avoid smudging—what’s available that could help with that?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

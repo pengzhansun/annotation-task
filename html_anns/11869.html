@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>pencil</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/11869.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/11869.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for writing or drawing</strong></u></i> of the target object <i><u><strong>pencil</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I'm eager to add some details to my drawing, but I need something sharp to define the edges properly."> Sentence 1: I'm eager to add some details to my drawing, but I need something sharp to define the edges properly.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: I want to make a few adjustments on this piece, but I can't start without a tool to sketch with."> Sentence 2: I want to make a few adjustments on this piece, but I can't start without a tool to sketch with.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: I'm ready to outline my design, but it's frustrating that I can't find anything to draw with right now."> Sentence 3: I'm ready to outline my design, but it's frustrating that I can't find anything to draw with right now.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: I’d love to refine this artwork, but I need an instrument to help me make those fine lines stand out."> Sentence 4: I’d love to refine this artwork, but I need an instrument to help me make those fine lines stand out.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: As I prepare to finish my illustration, I'm realizing I'm missing a way to put my thoughts on paper clearly."> Sentence 5: As I prepare to finish my illustration, I'm realizing I'm missing a way to put my thoughts on paper clearly.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for writing or drawing</strong></u></i> of the target object <i><u><strong>pencil</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need a sharp tool to create precise lines on this surface without leaving any smudges or permanent marks."> Sentence 1: I need a sharp tool to create precise lines on this surface without leaving any smudges or permanent marks.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: To sketch my ideas quickly, I really want something that can be easily erased when I make changes."> Sentence 2: To sketch my ideas quickly, I really want something that can be easily erased when I make changes.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I’m looking for a simple implement that can help me outline these intricate designs without the risk of ink bleeding."> Sentence 3: I’m looking for a simple implement that can help me outline these intricate designs without the risk of ink bleeding.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: It would be great to have something slender that can fit into tight spots for making notes without cluttering the page."> Sentence 4: It would be great to have something slender that can fit into tight spots for making notes without cluttering the page.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: To mark important details on this paper while still having the option to remove them later, I need a tool that can easily adapt to my corrections."> Sentence 5: To mark important details on this paper while still having the option to remove them later, I need a tool that can easily adapt to my corrections.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

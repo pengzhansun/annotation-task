@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>blender</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/5691.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/5691.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>blending food</strong></u></i> of the target object <i><u><strong>blender</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I need to prepare a refreshing drink by mixing these fruits together; could you assist me with that process?"> Sentence 1: I need to prepare a refreshing drink by mixing these fruits together; could you assist me with that process?</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: I'm looking to create a creamy smoothie with these ingredients, but I need something to help blend them smoothly."> Sentence 2: I'm looking to create a creamy smoothie with these ingredients, but I need something to help blend them smoothly.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: I’d like to make a sauce using these fresh ingredients; having a tool to blend them would be really helpful."> Sentence 3: I’d like to make a sauce using these fresh ingredients; having a tool to blend them would be really helpful.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: I want to whip up a delicious dip from these vegetables; can you help me combine them into a smooth mixture?"> Sentence 4: I want to whip up a delicious dip from these vegetables; can you help me combine them into a smooth mixture?</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I’m aiming to make a dessert with these items, but I need a way to get them nicely blended together."> Sentence 5: I’m aiming to make a dessert with these items, but I need a way to get them nicely blended together.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>blending food</strong></u></i> of the target object <i><u><strong>blender</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need to create a smooth paste from these nuts and spices for my homemade curry. Is there something nearby that could achieve that texture?"> Sentence 1: I need to create a smooth paste from these nuts and spices for my homemade curry. Is there something nearby that could achieve that texture?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: I’m looking to combine these ingredients into a creamy dressing, but my usual mixing bowl isn't doing the job. What could help me blend them effectively?"> Sentence 2: I’m looking to combine these ingredients into a creamy dressing, but my usual mixing bowl isn't doing the job. What could help me blend them effectively?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: To make this smoothie, I need to break down the fibrous fruits into a liquid form. Is there anything around here that can handle that task?"> Sentence 3: To make this smoothie, I need to break down the fibrous fruits into a liquid form. Is there anything around here that can handle that task?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I'm trying to whip up a fluffy dip, but whisking isn’t giving me the right consistency. What can I use to blend the ingredients together smoothly?"> Sentence 4: I'm trying to whip up a fluffy dip, but whisking isn’t giving me the right consistency. What can I use to blend the ingredients together smoothly?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I need to emulsify the oil and vinegar for my salad dressing, but my whisk isn’t cutting it. What could I use to mix them together more thoroughly?"> Sentence 5: I need to emulsify the oil and vinegar for my salad dressing, but my whisk isn’t cutting it. What could I use to mix them together more thoroughly?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

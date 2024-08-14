@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>book</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/9778.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/9778.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for reading</strong></u></i> of the target object <i><u><strong>book</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: As I set up my study space, I could really use some guidance on electrical concepts for my project."> Sentence 1: As I set up my study space, I could really use some guidance on electrical concepts for my project.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: I need to reference something specific for my assignments, and finding that textbook would help clarify the material."> Sentence 2: I need to reference something specific for my assignments, and finding that textbook would help clarify the material.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: To strengthen my understanding of the subject, I should dig into that nearby resource and take some notes."> Sentence 3: To strengthen my understanding of the subject, I should dig into that nearby resource and take some notes.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: While organizing my study area, it would be perfect to have that specific publication open for quick access to essential formulas."> Sentence 4: While organizing my study area, it would be perfect to have that specific publication open for quick access to essential formulas.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I’d like to dive deeper into this topic, so I should grab that book and see what insights it has to offer."> Sentence 5: I’d like to dive deeper into this topic, so I should grab that book and see what insights it has to offer.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for reading</strong></u></i> of the target object <i><u><strong>book</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need something with detailed instructions to help me understand these complex theories during my late-night study sessions."> Sentence 1: I need something with detailed instructions to help me understand these complex theories during my late-night study sessions.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: If only I had something that could provide in-depth explanations, it would really help clarify the topics we're discussing in class."> Sentence 2: If only I had something that could provide in-depth explanations, it would really help clarify the topics we're discussing in class.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: To find the right formulas and diagrams to support my project, I could really use a comprehensive resource that lays everything out clearly."> Sentence 3: To find the right formulas and diagrams to support my project, I could really use a comprehensive resource that lays everything out clearly.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: It would be great to have something that can offer historical context and practical examples to enhance my understanding of this subject."> Sentence 4: It would be great to have something that can offer historical context and practical examples to enhance my understanding of this subject.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I require a resource that thoroughly outlines the principles I need to comprehend for my upcoming examination on electrical measurements."> Sentence 5: I require a resource that thoroughly outlines the principles I need to comprehend for my upcoming examination on electrical measurements.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

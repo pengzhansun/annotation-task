@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>ball</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/2733.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/2733.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>used for sports or games</strong></u></i> of the target object <i><u><strong>ball</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: The players are anxiously waiting to start their practice, but they need that essential item to begin the drills."> Sentence 1: The players are anxiously waiting to start their practice, but they need that essential item to begin the drills.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: With the hoop in sight, it's the perfect time for a friendly challenge, but something important is needed to get the game going."> Sentence 2: With the hoop in sight, it's the perfect time for a friendly challenge, but something important is needed to get the game going.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: As teammates gather around the court, they're looking for the object that will let them test their shooting skills today."> Sentence 3: As teammates gather around the court, they're looking for the object that will let them test their shooting skills today.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: Everyone is excited for some action, but first, they need to find the key piece that makes the game fun."> Sentence 4: Everyone is excited for some action, but first, they need to find the key piece that makes the game fun.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: The atmosphere is buzzing with energy, yet they're all just waiting for the item that will spark the competition."> Sentence 5: The atmosphere is buzzing with energy, yet they're all just waiting for the item that will spark the competition.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>used for sports or games</strong></u></i> of the target object <i><u><strong>ball</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need something sturdy and round to anchor this makeshift game board in place during our outdoor craft session."> Sentence 1: I need something sturdy and round to anchor this makeshift game board in place during our outdoor craft session.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: I’m looking for an object that can serve as a stable base while I balance these colorful decorations for my project."> Sentence 2: I’m looking for an object that can serve as a stable base while I balance these colorful decorations for my project.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: It would be ideal to find something that can roll smoothly to create random patterns in my painting, adding a unique touch to the artwork."> Sentence 3: It would be ideal to find something that can roll smoothly to create random patterns in my painting, adding a unique touch to the artwork.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I could use something round to demonstrate the concept of movement in my science experiment on inertia."> Sentence 4: I could use something round to demonstrate the concept of movement in my science experiment on inertia.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I need an object that can act as a weight to keep the lid closed on this box while I organize the items inside."> Sentence 5: I need an object that can act as a weight to keep the lid closed on this box while I organize the items inside.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

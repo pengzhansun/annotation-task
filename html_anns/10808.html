@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>dog</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/10808.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/10808.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>as a pet</strong></u></i> of the target object <i><u><strong>dog</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: It seems like someone is ready for some playtime; I hope they haven't lost their favorite toy under the couch again."> Sentence 1: It seems like someone is ready for some playtime; I hope they haven't lost their favorite toy under the couch again.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: There’s a familiar wagging tail that would love to be part of our cozy evening on the couch."> Sentence 2: There’s a familiar wagging tail that would love to be part of our cozy evening on the couch.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: I wonder if our playful companion is looking for a spot to nap after a long day of adventures around the house."> Sentence 3: I wonder if our playful companion is looking for a spot to nap after a long day of adventures around the house.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: It feels a bit empty in here without the sound of paws scurrying around; I hope someone hasn't wandered off."> Sentence 4: It feels a bit empty in here without the sound of paws scurrying around; I hope someone hasn't wandered off.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I can almost hear the excited barks, but it looks like our furry friend might be waiting for a treat or some affection."> Sentence 5: I can almost hear the excited barks, but it looks like our furry friend might be waiting for a treat or some affection.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>as a pet</strong></u></i> of the target object <i><u><strong>dog</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: It would be great to have a companion who can provide a comforting presence and keep me company during quiet evenings at home."> Sentence 1: It would be great to have a companion who can provide a comforting presence and keep me company during quiet evenings at home.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: As I prepare to explore the neighborhood, having someone with strong instincts would make me feel safer while we discover new paths together."> Sentence 2: As I prepare to explore the neighborhood, having someone with strong instincts would make me feel safer while we discover new paths together.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: When it comes to playing fetch in the backyard, it would be much more fun if there was a lively friend eager to join in and keep the game going."> Sentence 3: When it comes to playing fetch in the backyard, it would be much more fun if there was a lively friend eager to join in and keep the game going.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: If I had something loyal by my side, it could help alert me if someone approaches the house while I’m busy doing chores."> Sentence 4: If I had something loyal by my side, it could help alert me if someone approaches the house while I’m busy doing chores.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: During our long walks, I could really use a playful buddy to help encourage me to keep moving and enjoy the fresh air."> Sentence 5: During our long walks, I could really use a playful buddy to help encourage me to keep moving and enjoy the fresh air.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

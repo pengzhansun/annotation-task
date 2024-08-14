@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>towel</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/24237.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/24237.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for wiping</strong></u></i> of the target object <i><u><strong>towel</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I could really use something to dry off after our little outing outside."> Sentence 1: I could really use something to dry off after our little outing outside.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: It seems like I could freshen up a bit after spending time in the rain."> Sentence 2: It seems like I could freshen up a bit after spending time in the rain.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: After playing around, I definitely need a way to wipe off the dirt and moisture."> Sentence 3: After playing around, I definitely need a way to wipe off the dirt and moisture.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: Please grab something to clean up the mess I made on my clothes."> Sentence 4: Please grab something to clean up the mess I made on my clothes.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I want to feel comfortable again after getting wet outside; can you find something for me?"> Sentence 5: I want to feel comfortable again after getting wet outside; can you find something for me?</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for wiping</strong></u></i> of the target object <i><u><strong>towel</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: After the splash from the pot, I urgently need something to wipe up the water and prevent it from slipping on the floor."> Sentence 1: After the splash from the pot, I urgently need something to wipe up the water and prevent it from slipping on the floor.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: I need a quick solution to dry off this surface where the food has spilled before it causes any water damage."> Sentence 2: I need a quick solution to dry off this surface where the food has spilled before it causes any water damage.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: The dog just jumped in the water, and I need something to help absorb all that excess moisture before it shakes everywhere."> Sentence 3: The dog just jumped in the water, and I need something to help absorb all that excess moisture before it shakes everywhere.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I’m looking for a way to cover this dish so it stays warm while still letting some steam escape; something soft would be perfect."> Sentence 4: I’m looking for a way to cover this dish so it stays warm while still letting some steam escape; something soft would be perfect.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I need to quickly remove the moisture from my hands before handling that ingredient, as it’s causing everything to slip."> Sentence 5: I need to quickly remove the moisture from my hands before handling that ingredient, as it’s causing everything to slip.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>wrench</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/17607.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/17607.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for tightening or loosening nuts and bolts</strong></u></i> of the target object <i><u><strong>wrench</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: It looks like I need to adjust these bolts on the brake assembly to ensure everything is secure before I continue working."> Sentence 1: It looks like I need to adjust these bolts on the brake assembly to ensure everything is secure before I continue working.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: I'll need to tighten the fittings on this part to prevent any issues while driving, so it's time to grab the right tool."> Sentence 2: I'll need to tighten the fittings on this part to prevent any issues while driving, so it's time to grab the right tool.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: Those nuts on the caliper could use a little more torque; I should find the right tool to make sure everything's locked in place."> Sentence 3: Those nuts on the caliper could use a little more torque; I should find the right tool to make sure everything's locked in place.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: Before I put the wheel back on, I should make sure to fasten those components tightly to avoid any mishaps."> Sentence 4: Before I put the wheel back on, I should make sure to fasten those components tightly to avoid any mishaps.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I need to ensure that all these connections are secure to keep everything functioning properly, so it's important to have the right tool handy."> Sentence 5: I need to ensure that all these connections are secure to keep everything functioning properly, so it's important to have the right tool handy.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for tightening or loosening nuts and bolts</strong></u></i> of the target object <i><u><strong>wrench</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need a sturdy tool to help secure these loose bolts on the fence, as my usual options just aren't doing the trick."> Sentence 1: I need a sturdy tool to help secure these loose bolts on the fence, as my usual options just aren't doing the trick.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: The cap on this container is stuck tight, and I could really use something strong to give it a twist and open it up."> Sentence 2: The cap on this container is stuck tight, and I could really use something strong to give it a twist and open it up.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I have a stubborn pipe that needs to be tightened, but my hands aren’t providing enough grip to get the job done."> Sentence 3: I have a stubborn pipe that needs to be tightened, but my hands aren’t providing enough grip to get the job done.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I require something with leverage to pry open this heavy lid; my hands alone aren't powerful enough for the task."> Sentence 4: I require something with leverage to pry open this heavy lid; my hands alone aren't powerful enough for the task.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: The adjustable fastener on my project is jammed, and I need a reliable tool to help me get it loose again."> Sentence 5: The adjustable fastener on my project is jammed, and I need a reliable tool to help me get it loose again.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

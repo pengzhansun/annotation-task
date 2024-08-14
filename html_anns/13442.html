@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>bicycle</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/13442.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/13442.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for biking</strong></u></i> of the target object <i><u><strong>bicycle</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: It would be great to get around the city quickly if I could hop on something light and nimble over there."> Sentence 1: It would be great to get around the city quickly if I could hop on something light and nimble over there.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: An afternoon ride through the park seems like a perfect way to unwind, especially with that waiting nearby."> Sentence 2: An afternoon ride through the park seems like a perfect way to unwind, especially with that waiting nearby.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: I could manage my errands much more efficiently if I had some wheels to help me navigate the streets."> Sentence 3: I could manage my errands much more efficiently if I had some wheels to help me navigate the streets.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: The weather is inviting, and I can't wait to explore some trails with the right kind of transportation."> Sentence 4: The weather is inviting, and I can't wait to explore some trails with the right kind of transportation.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: If only I had a means to cruise around, I could enjoy the fresh air while getting to my destination faster."> Sentence 5: If only I had a means to cruise around, I could enjoy the fresh air while getting to my destination faster.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for biking</strong></u></i> of the target object <i><u><strong>bicycle</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need a way to create a more efficient workspace for organizing tools while I repair equipment. Can you find something that can help me with that task?"> Sentence 1: I need a way to create a more efficient workspace for organizing tools while I repair equipment. Can you find something that can help me with that task?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: There's a need to set up a portable display for my workshop demonstrations. Is there anything here that can be used to showcase my projects on the go?"> Sentence 2: There's a need to set up a portable display for my workshop demonstrations. Is there anything here that can be used to showcase my projects on the go?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I have some heavy supplies that need to be transported across the yard, but I’d like to avoid carrying them by hand. Can you suggest a method to move them without too much effort?"> Sentence 3: I have some heavy supplies that need to be transported across the yard, but I’d like to avoid carrying them by hand. Can you suggest a method to move them without too much effort?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: We're planning an outdoor event and require a mobile solution for serving refreshments. Can you identify something that could be repurposed for that purpose?"> Sentence 4: We're planning an outdoor event and require a mobile solution for serving refreshments. Can you identify something that could be repurposed for that purpose?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I want to explore the local trails while bringing my gear along, but I need a way to carry everything easily. Is there an option nearby that could serve as a practical carrier?"> Sentence 5: I want to explore the local trails while bringing my gear along, but I need a way to carry everything easily. Is there an option nearby that could serve as a practical carrier?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

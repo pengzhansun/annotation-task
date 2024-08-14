@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>hat</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/10551.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/10551.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for wearing on the head to keep warm or provide shade</strong></u></i> of the target object <i><u><strong>hat</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: It would be nice to have something to block the sun while I’m focused on this climb."> Sentence 1: It would be nice to have something to block the sun while I’m focused on this climb.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: I could really use an extra layer to keep my head comfortable in this bright outdoor setting."> Sentence 2: I could really use an extra layer to keep my head comfortable in this bright outdoor setting.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: Having some shade while I’m working on this gear would make things a lot more enjoyable."> Sentence 3: Having some shade while I’m working on this gear would make things a lot more enjoyable.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: It’s getting a bit warm; a nice accessory to protect my head from the sun would help."> Sentence 4: It’s getting a bit warm; a nice accessory to protect my head from the sun would help.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I wish I had something to keep the sun out of my eyes while preparing for the next ascent."> Sentence 5: I wish I had something to keep the sun out of my eyes while preparing for the next ascent.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for wearing on the head to keep warm or provide shade</strong></u></i> of the target object <i><u><strong>hat</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: With the sun glaring down, I need something that can help block the glare while I'm trying to read my book at the beach."> Sentence 1: With the sun glaring down, I need something that can help block the glare while I'm trying to read my book at the beach.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: It’s getting a bit chilly, and I wish I had something lightweight to help me cover my ears while enjoying this outdoor concert."> Sentence 2: It’s getting a bit chilly, and I wish I had something lightweight to help me cover my ears while enjoying this outdoor concert.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I could really use an item to shield my face while I’m trying to take a photo without squinting at the bright light."> Sentence 3: I could really use an item to shield my face while I’m trying to take a photo without squinting at the bright light.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: The breeze is picking up, and I need something to keep my hair in place while I’m enjoying this picnic."> Sentence 4: The breeze is picking up, and I need something to keep my hair in place while I’m enjoying this picnic.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: There’s a sudden drizzle, and I’m hoping to find something to protect my eyes from the wet droplets while I continue my walk."> Sentence 5: There’s a sudden drizzle, and I’m hoping to find something to protect my eyes from the wet droplets while I continue my walk.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

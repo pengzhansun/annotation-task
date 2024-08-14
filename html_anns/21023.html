@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>calculator</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/21023.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/21023.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for calculating</strong></u></i> of the target object <i><u><strong>calculator</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I need to add up all these supplies to see if our budget is on track for this project."> Sentence 1: I need to add up all these supplies to see if our budget is on track for this project.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: Let me check the total costs of these materials to ensure we’re staying within our spending limits."> Sentence 2: Let me check the total costs of these materials to ensure we’re staying within our spending limits.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: I want to calculate how much we’ve spent on tools this month to help plan for next quarter’s purchases."> Sentence 3: I want to calculate how much we’ve spent on tools this month to help plan for next quarter’s purchases.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: It’s important to figure out the exact quantities and prices so I can estimate our expenses accurately."> Sentence 4: It’s important to figure out the exact quantities and prices so I can estimate our expenses accurately.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I’d better work out the totals for this stock before we order anything new to avoid overspending."> Sentence 5: I’d better work out the totals for this stock before we order anything new to avoid overspending.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for calculating</strong></u></i> of the target object <i><u><strong>calculator</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I'm trying to figure out how much paint I need for this wall, but I can't seem to find my measuring tools to help with the calculations."> Sentence 1: I'm trying to figure out how much paint I need for this wall, but I can't seem to find my measuring tools to help with the calculations.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: We need to average the scores from this quiz quickly, but it seems we’re missing a reliable way to do the math without getting confused."> Sentence 2: We need to average the scores from this quiz quickly, but it seems we’re missing a reliable way to do the math without getting confused.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I'm trying to break down the total cost of our group project for each person, but the only item we have that could help is that old gadget over there."> Sentence 3: I'm trying to break down the total cost of our group project for each person, but the only item we have that could help is that old gadget over there.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: While preparing our science reports, I need to convert these measurements accurately, but I forgot to bring my conversion charts."> Sentence 4: While preparing our science reports, I need to convert these measurements accurately, but I forgot to bring my conversion charts.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I need to make precise calculations for the recipe I'm adjusting, but we are short on anything that could help with figuring out the correct proportions."> Sentence 5: I need to make precise calculations for the recipe I'm adjusting, but we are short on anything that could help with figuring out the correct proportions.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>watch</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/16616.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/16616.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for checking the time</strong></u></i> of the target object <i><u><strong>watch</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I'm trying to keep track of how long I've been working in the shop, but I really miss having something on my wrist to check the time."> Sentence 1: I'm trying to keep track of how long I've been working in the shop, but I really miss having something on my wrist to check the time.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: As I get ready to tackle this project, it would be great to have a way to time my breaks and stay focused without constantly checking my phone."> Sentence 2: As I get ready to tackle this project, it would be great to have a way to time my breaks and stay focused without constantly checking my phone.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: I want to make sure I finish this task before dinner, but I can’t track the time without something to remind me on my wrist."> Sentence 3: I want to make sure I finish this task before dinner, but I can’t track the time without something to remind me on my wrist.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: It feels strange not to have my usual accessory while I'm working; I need something to help me manage my time."> Sentence 4: It feels strange not to have my usual accessory while I'm working; I need something to help me manage my time.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I keep glancing at the wall clock, but it would be much easier if I had a reliable way to keep track of time as I work."> Sentence 5: I keep glancing at the wall clock, but it would be much easier if I had a reliable way to keep track of time as I work.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for checking the time</strong></u></i> of the target object <i><u><strong>watch</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need something that can keep me oriented and help track the time while I'm out hiking in unfamiliar terrain."> Sentence 1: I need something that can keep me oriented and help track the time while I'm out hiking in unfamiliar terrain.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: Could you find an item that can remind me of important tasks and deadlines without needing to pull out my phone?"> Sentence 2: Could you find an item that can remind me of important tasks and deadlines without needing to pull out my phone?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I'm looking for a device that can give me the ability to track my workouts and monitor my progress during various fitness activities."> Sentence 3: I'm looking for a device that can give me the ability to track my workouts and monitor my progress during various fitness activities.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I need something that can help me stay punctual for my appointments without relying on my phone’s notifications."> Sentence 4: I need something that can help me stay punctual for my appointments without relying on my phone’s notifications.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: Can you get me a gadget that provides notifications for messages and calls while I'm busy, allowing me to stay connected hands-free?"> Sentence 5: Can you get me a gadget that provides notifications for messages and calls while I'm busy, allowing me to stay connected hands-free?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

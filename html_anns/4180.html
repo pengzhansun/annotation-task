@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>car_(automobile)</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/4180.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/4180.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for driving</strong></u></i> of the target object <i><u><strong>car_(automobile)</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: As I work on this, I need to figure out how to get this engine part installed back in the vehicle."> Sentence 1: As I work on this, I need to figure out how to get this engine part installed back in the vehicle.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: I’ve gathered all the tools I need, but I could really use some extra space to lay out the components for this car repair."> Sentence 2: I’ve gathered all the tools I need, but I could really use some extra space to lay out the components for this car repair.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: While I'm here, I should check the oil and make sure everything is in good condition before taking it for a spin."> Sentence 3: While I'm here, I should check the oil and make sure everything is in good condition before taking it for a spin.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: I have to ensure all the necessary parts are replacement-ready, because I want this car running smoothly again."> Sentence 4: I have to ensure all the necessary parts are replacement-ready, because I want this car running smoothly again.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: Once I'm finished with this project, I’ll be ready to take the car back on the road for a nice drive."> Sentence 5: Once I'm finished with this project, I’ll be ready to take the car back on the road for a nice drive.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for driving</strong></u></i> of the target object <i><u><strong>car_(automobile)</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: To provide a sturdy platform for our moving supplies while we work, having something that can also transport tools would be essential."> Sentence 1: To provide a sturdy platform for our moving supplies while we work, having something that can also transport tools would be essential.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: It would be incredibly useful to have an enclosed space that can not only keep our equipment secure but also serve as a base for adjusting components on the go."> Sentence 2: It would be incredibly useful to have an enclosed space that can not only keep our equipment secure but also serve as a base for adjusting components on the go.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: In this situation, I need an object that can easily hold a variety of items and be moved around while supporting our ongoing tasks."> Sentence 3: In this situation, I need an object that can easily hold a variety of items and be moved around while supporting our ongoing tasks.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: If only we had a versatile solution that could act as both a storage unit and a makeshift workspace out here in the field."> Sentence 4: If only we had a versatile solution that could act as both a storage unit and a makeshift workspace out here in the field.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: This project would benefit from something that can safely carry our materials and also be easily accessible for quick modifications."> Sentence 5: This project would benefit from something that can safely carry our materials and also be easily accessible for quick modifications.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

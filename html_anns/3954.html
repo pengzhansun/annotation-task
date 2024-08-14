@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>pipe</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/3954.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/3954.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for transporting liquids</strong></u></i> of the target object <i><u><strong>pipe</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: To fix the water flow in the garden, I need something to connect this section properly beneath the foliage."> Sentence 1: To fix the water flow in the garden, I need something to connect this section properly beneath the foliage.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: As I'm trying to redirect the water, I realize I need an essential piece to link these two ends in the muddy area."> Sentence 2: As I'm trying to redirect the water, I realize I need an essential piece to link these two ends in the muddy area.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: With all this water pooling around, I require a means to direct it effectively from the source through the plants."> Sentence 3: With all this water pooling around, I require a means to direct it effectively from the source through the plants.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: To resolve this issue in the garden, I’m looking for a way to establish a continuous flow from the buried part to the current setup."> Sentence 4: To resolve this issue in the garden, I’m looking for a way to establish a continuous flow from the buried part to the current setup.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: Since the water isn’t moving correctly, I could really use a connector that will bridge these two sections underground."> Sentence 5: Since the water isn’t moving correctly, I could really use a connector that will bridge these two sections underground.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for transporting liquids</strong></u></i> of the target object <i><u><strong>pipe</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need to devise a way to create a channel for water runoff, so let’s look for something cylindrical that can help with directing the flow."> Sentence 1: I need to devise a way to create a channel for water runoff, so let’s look for something cylindrical that can help with directing the flow.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: We're short on stakes for the garden; can you find a sturdy component that could serve as a support for my climbing vines?"> Sentence 2: We're short on stakes for the garden; can you find a sturdy component that could serve as a support for my climbing vines?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: To enhance the outdoor sound experience, I'd like to create a resonating chamber; something hollow could really amplify the music."> Sentence 3: To enhance the outdoor sound experience, I'd like to create a resonating chamber; something hollow could really amplify the music.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I’m trying to build a makeshift trellis for the garden; could you locate something long and rigid to prop up the plants?"> Sentence 4: I’m trying to build a makeshift trellis for the garden; could you locate something long and rigid to prop up the plants?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: We need a way to keep those hedges neatly trimmed; let’s find an item that can help extend our reach for better maintenance."> Sentence 5: We need a way to keep those hedges neatly trimmed; let’s find an item that can help extend our reach for better maintenance.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

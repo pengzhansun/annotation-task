@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>laptop_computer</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/5163.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/5163.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for work or play</strong></u></i> of the target object <i><u><strong>laptop_computer</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I need to gather all my digital files and incorporate the latest changes to my project soon."> Sentence 1: I need to gather all my digital files and incorporate the latest changes to my project soon.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: While I organize my sketches, I should also upload them to the platform for peer review."> Sentence 2: While I organize my sketches, I should also upload them to the platform for peer review.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: It’s crucial to prepare my presentations for tomorrow’s meeting, so I should connect to the necessary software."> Sentence 3: It’s crucial to prepare my presentations for tomorrow’s meeting, so I should connect to the necessary software.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: I should set up my workspace to access the online tutorials that will help improve my design skills."> Sentence 4: I should set up my workspace to access the online tutorials that will help improve my design skills.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: Before I dive into this painting, I’ll look up some inspiration and techniques online."> Sentence 5: Before I dive into this painting, I’ll look up some inspiration and techniques online.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for work or play</strong></u></i> of the target object <i><u><strong>laptop_computer</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need a device that can help me create and edit documents while I’m on the go without taking up too much space."> Sentence 1: I need a device that can help me create and edit documents while I’m on the go without taking up too much space.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: I'm looking for a way to connect and display my digital art projects so I can share them with friends during our gathering."> Sentence 2: I'm looking for a way to connect and display my digital art projects so I can share them with friends during our gathering.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I require a tool that allows me to compile and analyze data while also providing access to online research materials."> Sentence 3: I require a tool that allows me to compile and analyze data while also providing access to online research materials.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: Could you find something that can facilitate presentations and allow me to interact with my audience remotely?"> Sentence 4: Could you find something that can facilitate presentations and allow me to interact with my audience remotely?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I need a gadget that can serve as an interface for my coding projects while providing ample storage for my files and applications."> Sentence 5: I need a gadget that can serve as an interface for my coding projects while providing ample storage for my files and applications.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

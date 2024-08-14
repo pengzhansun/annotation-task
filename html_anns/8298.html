@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>spoon</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/8298.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/8298.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for scooping</strong></u></i> of the target object <i><u><strong>spoon</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I need something to scoop the sauce into my bowl after chopping these ingredients."> Sentence 1: I need something to scoop the sauce into my bowl after chopping these ingredients.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: I’d like to stir in some seasoning without making a mess on the counter."> Sentence 2: I’d like to stir in some seasoning without making a mess on the counter.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: I want to mix the eggs with the vegetables for my dish, but I need the right tool."> Sentence 3: I want to mix the eggs with the vegetables for my dish, but I need the right tool.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: I’m looking for a way to serve the soup once it’s ready to enjoy."> Sentence 4: I’m looking for a way to serve the soup once it’s ready to enjoy.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I could use an utensil to help taste this mixture before I cook it further."> Sentence 5: I could use an utensil to help taste this mixture before I cook it further.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for scooping</strong></u></i> of the target object <i><u><strong>spoon</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need a long, curved implement to help mix this thick paint thoroughly without splattering it everywhere."> Sentence 1: I need a long, curved implement to help mix this thick paint thoroughly without splattering it everywhere.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: This small container of cream is too deep to reach into; could you find something to scrape out its contents effectively?"> Sentence 2: This small container of cream is too deep to reach into; could you find something to scrape out its contents effectively?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I’m trying to fold this delicate origami paper without creasing it too much; could we use something with a smooth edge to assist?"> Sentence 3: I’m trying to fold this delicate origami paper without creasing it too much; could we use something with a smooth edge to assist?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: There’s a sticky layer at the bottom of this potion jar; I could use a narrow tool to help get every bit out."> Sentence 4: There’s a sticky layer at the bottom of this potion jar; I could use a narrow tool to help get every bit out.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I need to transfer a small amount of flour from the bag to this bowl without spilling; can you find a tool to assist me with that?"> Sentence 5: I need to transfer a small amount of flour from the bag to this bowl without spilling; can you find a tool to assist me with that?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Annotation Task</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: left;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .task {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sentences {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .annotation-tool {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select the Appropriate Sentence and Revise it</h1>
+        <div class="instructions">
+            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>chair</strong></u></i> shown with the bounding box on the image.</p>
+            <img id="image" src="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/18438.jpg" alt="Task Image">
+        </div>
+        
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="https://ego-paco-affordance-project.s3.ap-southeast-2.amazonaws.com/paco_dataset/draw_box/18438.jpg">
+            
+            <div class="task">
+                <h2>Context-aware Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
+                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>for sitting</strong></u></i> of the target object <i><u><strong>chair</strong></u></i>.</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: I could really use a comfortable spot to sit while I enjoy my coffee in this busy place."> Sentence 1: I could really use a comfortable spot to sit while I enjoy my coffee in this busy place.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: It would be nice to have a place to relax and take a break after shopping, rather than standing by the table."> Sentence 2: It would be nice to have a place to relax and take a break after shopping, rather than standing by the table.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: I need somewhere to sit and catch up on my reading while waiting for my friends to arrive."> Sentence 3: I need somewhere to sit and catch up on my reading while waiting for my friends to arrive.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: It would be helpful to have an extra seat for anyone joining us at the table for a quick chat."> Sentence 4: It would be helpful to have an extra seat for anyone joining us at the table for a quick chat.</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: I’d love to find a seat to set my coffee down and enjoy a snack while I browse through my phone."> Sentence 5: I’d love to find a seat to set my coffee down and enjoy a snack while I browse through my phone.</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <div class="task">
+                <h2>Uncommon Intention Sentence</h2>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>for sitting</strong></u></i> of the target object <i><u><strong>chair</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
+                <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
+                <div class="sentences">
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: I need a stable surface to support some friends while we gather to discuss ideas, but there’s nowhere for everyone to sit comfortably."> Sentence 1: I need a stable surface to support some friends while we gather to discuss ideas, but there’s nowhere for everyone to sit comfortably.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: The children can't see over the table during snack time; is there something I can use to help them reach the food?"> Sentence 2: The children can't see over the table during snack time; is there something I can use to help them reach the food?</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: I’m trying to set up a cozy reading nook, but I don’t have anywhere to rest while I enjoy my book."> Sentence 3: I’m trying to set up a cozy reading nook, but I don’t have anywhere to rest while I enjoy my book.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: I need to create an extra spot for someone to join the conversation, but the space feels too cramped for any additional seating."> Sentence 4: I need to create an extra spot for someone to join the conversation, but the space feels too cramped for any additional seating.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: I want to organize these plants for an afternoon gathering, but there's no place for guests to enjoy the view while sitting down."> Sentence 5: I want to organize these plants for an afternoon gathering, but there's no place for guests to enjoy the view while sitting down.</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                </div>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
