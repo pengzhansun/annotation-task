@@ -79,12 +79,12 @@ html_template = Template('''<!DOCTYPE html>
                 <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
                 <p>Select a reasonable context-aware intention sentence and revise it if necessary. One sentence is prefered if it matches the primary object affordance or function <i><u><strong>${primary_affordance}</strong></u></i> of the target object <i><u><strong>${object}</strong></u></i>.</p>
                 <div class="sentences">
-                    <label><input type="radio" name="common_sentence" value="Sentence 1: ${common_sentence_1}"> Sentence 1: ${common_sentence_1}</label><br>
-                    <label><input type="radio" name="common_sentence" value="Sentence 2: ${common_sentence_2}"> Sentence 2: ${common_sentence_2}</label><br>
-                    <label><input type="radio" name="common_sentence" value="Sentence 3: ${common_sentence_3}"> Sentence 3: ${common_sentence_3}</label><br>
-                    <label><input type="radio" name="common_sentence" value="Sentence 4: ${common_sentence_4}"> Sentence 4: ${common_sentence_4}</label><br>
-                    <label><input type="radio" name="common_sentence" value="Sentence 5: ${common_sentence_5}"> Sentence 5: ${common_sentence_5}</label><br>
-                    <label><input type="radio" name="common_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                    <label><input type="radio" name="common_sentence" value="${common_sentence_1}" required> Sentence 1: ${common_sentence_1}</label><br>
+                    <label><input type="radio" name="common_sentence" value="${common_sentence_2}" required> Sentence 2: ${common_sentence_2}</label><br>
+                    <label><input type="radio" name="common_sentence" value="${common_sentence_3}" required> Sentence 3: ${common_sentence_3}</label><br>
+                    <label><input type="radio" name="common_sentence" value="${common_sentence_4}" required> Sentence 4: ${common_sentence_4}</label><br>
+                    <label><input type="radio" name="common_sentence" value="${common_sentence_5}" required> Sentence 5: ${common_sentence_5}</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough" required> None of the above is good enough</label><br>
                 </div>
                 <input name="common_utterance" placeholder="Type your revised sentence here..." required>
             </div>
@@ -95,12 +95,12 @@ html_template = Template('''<!DOCTYPE html>
                 <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>${primary_affordance}</strong></u></i> of the target object <i><u><strong>${object}</strong></u></i>. Priority for selection: 1. The sentence must express an uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
                 <p>2. If necessary, revise the selected sentence. If none of the candidate sentences meet the criteria, please write a new sentence that conveys an uncommon intention and <i><u><strong>does NOT</strong></u></i> describe the primary affordance or function <i><u><strong>${primary_affordance}</strong></u></i>.</p>
                 <div class="sentences">
-                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: ${uncommon_sentence_1}"> Sentence 1: ${uncommon_sentence_1}</label><br>
-                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: ${uncommon_sentence_2}"> Sentence 2: ${uncommon_sentence_2}</label><br>
-                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: ${uncommon_sentence_3}"> Sentence 3: ${uncommon_sentence_3}</label><br>
-                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: ${uncommon_sentence_4}"> Sentence 4: ${uncommon_sentence_4}</label><br>
-                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: ${uncommon_sentence_5}"> Sentence 5: ${uncommon_sentence_5}</label><br>
-                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough"> None of the above is good enough</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="${uncommon_sentence_1}" required> Sentence 1: ${uncommon_sentence_1}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="${uncommon_sentence_2}" required> Sentence 2: ${uncommon_sentence_2}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="${uncommon_sentence_3}" required> Sentence 3: ${uncommon_sentence_3}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="${uncommon_sentence_4}" required> Sentence 4: ${uncommon_sentence_4}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="${uncommon_sentence_5}" required> Sentence 5: ${uncommon_sentence_5}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough" required> None of the above is good enough</label><br>
                 </div>
                 <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
             </div>

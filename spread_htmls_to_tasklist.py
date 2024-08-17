@@ -86,9 +86,13 @@ html_template = '''<!DOCTYPE html>
         document.addEventListener('DOMContentLoaded', function () {
             for (let i = 1; i <= ${tasks_count}; i++) {
                 let checkbox = document.getElementById('task-' + i);
-                if (localStorage.getItem('task-' + i) === 'true') {
+                let savedState = localStorage.getItem('task-' + i);
+                if (savedState === 'true') {
                     checkbox.checked = true;
+                } else {
+                    checkbox.checked = false;
                 }
+                
                 checkbox.addEventListener('change', function () {
                     localStorage.setItem('task-' + i, checkbox.checked);
                 });
@@ -101,7 +105,8 @@ html_template = '''<!DOCTYPE html>
         }
     </script>
 </body>
-</html>'''
+</html>
+'''
 
 # Function to create task items for HTML
 def create_task_items(task_paths, start_id):

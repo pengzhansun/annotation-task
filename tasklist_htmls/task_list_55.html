@@ -2852,9 +2852,13 @@
         document.addEventListener('DOMContentLoaded', function () {
             for (let i = 1; i <= 464; i++) {
                 let checkbox = document.getElementById('task-' + i);
-                if (localStorage.getItem('task-' + i) === 'true') {
+                let savedState = localStorage.getItem('task-' + i);
+                if (savedState === 'true') {
                     checkbox.checked = true;
+                } else {
+                    checkbox.checked = false;
                 }
+                
                 checkbox.addEventListener('change', function () {
                     localStorage.setItem('task-' + i, checkbox.checked);
                 });
