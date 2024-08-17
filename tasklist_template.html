@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annotation Task List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .task-item label {
+            margin-left: 10px;
+        }
+        .task-item input[type="checkbox"] {
+            transform: scale(1.5);
+            margin-right: 10px;
+        }
+        .task-item a {
+            text-decoration: none;
+            color: #007bff;
+            margin-left: 5px;
+        }
+        .task-item a:hover {
+            text-decoration: underline;
+        }
+        .save-progress {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Annotation Task List</h1>
+        <ul class="task-list">
+            <!-- Example of a task item, repeat for each of the 500 tasks -->
+            <!-- Replace "task_1.html", "task_2.html", etc. with your actual file paths -->
+            <!-- Replace the file paths with the actual paths to your HTML files -->
+            <li class="task-item">
+                <input type="checkbox" id="task-1">
+                <label for="task-1"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12646.html" target="_blank">Task 1</a></label>
+            </li>
+            <li class="task-item">
+                <input type="checkbox" id="task-2">
+                <label for="task-2"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8738.html" target="_blank">Task 2</a></label>
+            </li>
+            <!-- Repeat for 500 tasks -->
+            <!-- Example: -->
+            <!-- <li class="task-item">
+                <input type="checkbox" id="task-3">
+                <label for="task-3"><a href="path/to/task_3.html" target="_blank">Task 3</a></label>
+            </li> -->
+        </ul>
+        <button class="save-progress" onclick="saveProgress()">Save Progress</button>
+    </div>
+
+    <script>
+        // Load progress from local storage
+        document.addEventListener('DOMContentLoaded', function () {
+            for (let i = 1; i <= 500; i++) {
+                let checkbox = document.getElementById('task-' + i);
+                if (localStorage.getItem('task-' + i) === 'true') {
+                    checkbox.checked = true;
+                }
+                checkbox.addEventListener('change', function () {
+                    localStorage.setItem('task-' + i, checkbox.checked);
+                });
+            }
+        });
+
+        // Save progress to local storage
+        function saveProgress() {
+            alert('Progress saved! You can resume your work anytime.');
+        }
+    </script>
+</body>
+</html>

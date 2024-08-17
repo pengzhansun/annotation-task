@@ -17,13 +17,13 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            height: auto; /* Container height adjusts to content */
+            height: auto;
         }
         h1 {
             text-align: center;
         }
         p {
-            text-align: left; /* Ensure text within <p> tags is left-aligned */
+            text-align: left;
         }
         .instructions {
             margin-bottom: 20px;
@@ -47,51 +47,53 @@
             margin: 0 auto;
         }
     </style>
-    <!-- Include this JavaScript file for Amazon SageMaker Ground Truth -->
-    <script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Select the Appropriate Sentence and Revise it</h1>
         <div class="instructions">
-            <p>Here is an image and several human intention sentences that express the need of object <i><u><strong>${object}</strong></u></i> shown with the bounding box on the image.</p>
+            <p>Here is an image and several human intention sentences generated automatically that express the need of object <i><u><strong>${object}</strong></u></i> shown with the bounding box on the image.</p>
             <img id="image" src="${image_url}" alt="Task Image">
         </div>
         
-        <crowd-form answer-format="flatten-objects">
+        <form action="https://script.google.com/macros/s/AKfycbyDH0Wt0lLPppj8tbeuILapQ_nXaNiW_S3b7sgiNxMDJGIGhtTxhRaCJ4B_VqNfYdcsyQ/exec" method="POST">
+            <!-- Hidden input to capture image URL -->
+            <input type="hidden" name="image_url" value="${image_url}">
+            
             <div class="task">
                 <h2>Context-aware Intention Sentence</h2>
                 <p><i><u><strong>Definition</strong></u></i>: An intention description that includes <i><u><strong>multiple object relationships and/or subtle background cues</strong></u></i>.</p>
-                <p>1. Select a context-aware intention sentence that best matches the primary object affordance or function <i><u><strong>${primary_affordance}</strong></u></i> of the target object <i><u><strong>${object}</strong></u></i>.</p>
+                <p>1. Select a reasonable context-aware intention sentence. One sentence is preferred if it matches the primary object affordance or function <i><u><strong>${primary_affordance}</strong></u></i> of the target object <i><u><strong>${object}</strong></u></i>.</p>
                 <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
                 <div class="sentences">
-                    <label><input type="radio" name="common_sentence" value="1"> Sentence 1: ${common_sentence_1}</label><br>
-                    <label><input type="radio" name="common_sentence" value="2"> Sentence 2: ${common_sentence_2}</label><br>
-                    <label><input type="radio" name="common_sentence" value="3"> Sentence 3: ${common_sentence_3}</label><br>
-                    <label><input type="radio" name="common_sentence" value="4"> Sentence 4: ${common_sentence_4}</label><br>
-                    <label><input type="radio" name="common_sentence" value="5"> Sentence 5: ${common_sentence_5}</label><br>
-                    <label><input type="radio" name="common_sentence" value="6"> None of the above is good enough</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 1: ${common_sentence_1}" required> Sentence 1: ${common_sentence_1}</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 2: ${common_sentence_2}" required> Sentence 2: ${common_sentence_2}</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 3: ${common_sentence_3}" required> Sentence 3: ${common_sentence_3}</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 4: ${common_sentence_4}" required> Sentence 4: ${common_sentence_4}</label><br>
+                    <label><input type="radio" name="common_sentence" value="Sentence 5: ${common_sentence_5}" required> Sentence 5: ${common_sentence_5}</label><br>
+                    <label><input type="radio" name="common_sentence" value="None of the above is good enough" required> None of the above is good enough</label><br>
                 </div>
-                <crowd-input name="common_utterance" placeholder="Type your revised sentence here..." required></crowd-input>
+                <input name="common_utterance" placeholder="Type your revised sentence here..." required>
             </div>
             
             <div class="task">
                 <h2>Uncommon Intention Sentence</h2>
-                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's uncommon functionality.</p>
+                <p><i><u><strong>Definition</strong></u></i>: An intention description that expresses the need for an object's <i><u><strong>uncommon functionality</strong></u></i>.</p>
                 <p>1. Select a reasonably uncommon intention sentence that <i><u><strong>does NOT</strong></u></i> express the primary affordance or function <i><u><strong>${primary_affordance}</strong></u></i> of the target object <i><u><strong>${object}</strong></u></i>. Filter priority: 1. Express uncommon intention (required); 2. The sentence is related to the displayed picture (optional).</p>
                 <p>2. Revise the selected sentence to make it similar to how a human would express the need for an object to an AI assistant. You can copy and paste your selected sentence here if you think it’s already close to a human expression.</p>
                 <div class="sentences">
-                    <label><input type="radio" name="uncommon_sentence" value="1"> Sentence 1: ${uncommon_sentence_1}</label><br>
-                    <label><input type="radio" name="uncommon_sentence" value="2"> Sentence 2: ${uncommon_sentence_2}</label><br>
-                    <label><input type="radio" name="uncommon_sentence" value="3"> Sentence 3: ${uncommon_sentence_3}</label><br>
-                    <label><input type="radio" name="uncommon_sentence" value="4"> Sentence 4: ${uncommon_sentence_4}</label><br>
-                    <label><input type="radio" name="uncommon_sentence" value="5"> Sentence 5: ${uncommon_sentence_5}</label><br>
-                    <label><input type="radio" name="uncommon_sentence" value="6"> None of the above is good enough</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 1: ${uncommon_sentence_1}" required> Sentence 1: ${uncommon_sentence_1}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 2: ${uncommon_sentence_2}" required> Sentence 2: ${uncommon_sentence_2}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 3: ${uncommon_sentence_3}" required> Sentence 3: ${uncommon_sentence_3}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 4: ${uncommon_sentence_4}" required> Sentence 4: ${uncommon_sentence_4}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="Sentence 5: ${uncommon_sentence_5}" required> Sentence 5: ${uncommon_sentence_5}</label><br>
+                    <label><input type="radio" name="uncommon_sentence" value="None of the above is good enough" required> None of the above is good enough</label><br>
                 </div>
-                <crowd-input name="uncommon_utterance" placeholder="Type your revised sentence here..." required></crowd-input>
+                <input name="uncommon_utterance" placeholder="Type your revised sentence here..." required>
             </div>
-
-        </crowd-form>
+            
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </body>
 </html>

@@ -1,0 +1,2966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annotation Task List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .task-item label {
+            margin-left: 10px;
+        }
+        .task-item input[type="checkbox"] {
+            transform: scale(1.5);
+            margin-right: 10px;
+        }
+        .task-item a {
+            text-decoration: none;
+            color: #007bff;
+            margin-left: 5px;
+        }
+        .task-item a:hover {
+            text-decoration: underline;
+        }
+        .save-progress {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>You're given 480 tasks shown in this task list. For each task, please select one appropriate sentence from the candidate set generated according to the requirements detailed in the task. You can copy and paste the selected sentence if the quality is good, otherwise please revise the sentence to be natural and similar to human expression.</p>
+        <p>Please check the box next to each task as you complete it. This will help you keep track of your progress and identify any tasks that still need to be finished.</p>
+        <h1>Annotation Task List</h1>
+        <ul class="task-list">
+            
+            <li class="task-item">
+                <input type="checkbox" id="task-1">
+                <label for="task-1"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21048.html" target="_blank">Task 1</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-2">
+                <label for="task-2"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19586.html" target="_blank">Task 2</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-3">
+                <label for="task-3"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3878.html" target="_blank">Task 3</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-4">
+                <label for="task-4"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12646.html" target="_blank">Task 4</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-5">
+                <label for="task-5"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16756.html" target="_blank">Task 5</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-6">
+                <label for="task-6"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20905.html" target="_blank">Task 6</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-7">
+                <label for="task-7"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24474.html" target="_blank">Task 7</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-8">
+                <label for="task-8"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8738.html" target="_blank">Task 8</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-9">
+                <label for="task-9"><a href="https://pengzhansun.github.io/annotation-task/html_anns/923.html" target="_blank">Task 9</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-10">
+                <label for="task-10"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15354.html" target="_blank">Task 10</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-11">
+                <label for="task-11"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23119.html" target="_blank">Task 11</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-12">
+                <label for="task-12"><a href="https://pengzhansun.github.io/annotation-task/html_anns/780.html" target="_blank">Task 12</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-13">
+                <label for="task-13"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10796.html" target="_blank">Task 13</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-14">
+                <label for="task-14"><a href="https://pengzhansun.github.io/annotation-task/html_anns/6904.html" target="_blank">Task 14</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-15">
+                <label for="task-15"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17256.html" target="_blank">Task 15</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-16">
+                <label for="task-16"><a href="https://pengzhansun.github.io/annotation-task/html_anns/875.html" target="_blank">Task 16</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-17">
+                <label for="task-17"><a href="https://pengzhansun.github.io/annotation-task/html_anns/6249.html" target="_blank">Task 17</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-18">
+                <label for="task-18"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2436.html" target="_blank">Task 18</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-19">
+                <label for="task-19"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10318.html" target="_blank">Task 19</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-20">
+                <label for="task-20"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9847.html" target="_blank">Task 20</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-21">
+                <label for="task-21"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18351.html" target="_blank">Task 21</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-22">
+                <label for="task-22"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7202.html" target="_blank">Task 22</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-23">
+                <label for="task-23"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10126.html" target="_blank">Task 23</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-24">
+                <label for="task-24"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25056.html" target="_blank">Task 24</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-25">
+                <label for="task-25"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20215.html" target="_blank">Task 25</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-26">
+                <label for="task-26"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7612.html" target="_blank">Task 26</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-27">
+                <label for="task-27"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25401.html" target="_blank">Task 27</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-28">
+                <label for="task-28"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14317.html" target="_blank">Task 28</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-29">
+                <label for="task-29"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16923.html" target="_blank">Task 29</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-30">
+                <label for="task-30"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2468.html" target="_blank">Task 30</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-31">
+                <label for="task-31"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11967.html" target="_blank">Task 31</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-32">
+                <label for="task-32"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2940.html" target="_blank">Task 32</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-33">
+                <label for="task-33"><a href="https://pengzhansun.github.io/annotation-task/html_anns/734.html" target="_blank">Task 33</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-34">
+                <label for="task-34"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7575.html" target="_blank">Task 34</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-35">
+                <label for="task-35"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17822.html" target="_blank">Task 35</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-36">
+                <label for="task-36"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18830.html" target="_blank">Task 36</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-37">
+                <label for="task-37"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7654.html" target="_blank">Task 37</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-38">
+                <label for="task-38"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8593.html" target="_blank">Task 38</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-39">
+                <label for="task-39"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23711.html" target="_blank">Task 39</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-40">
+                <label for="task-40"><a href="https://pengzhansun.github.io/annotation-task/html_anns/993.html" target="_blank">Task 40</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-41">
+                <label for="task-41"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17540.html" target="_blank">Task 41</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-42">
+                <label for="task-42"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25077.html" target="_blank">Task 42</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-43">
+                <label for="task-43"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22839.html" target="_blank">Task 43</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-44">
+                <label for="task-44"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15946.html" target="_blank">Task 44</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-45">
+                <label for="task-45"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14718.html" target="_blank">Task 45</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-46">
+                <label for="task-46"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16493.html" target="_blank">Task 46</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-47">
+                <label for="task-47"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8208.html" target="_blank">Task 47</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-48">
+                <label for="task-48"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5385.html" target="_blank">Task 48</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-49">
+                <label for="task-49"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13370.html" target="_blank">Task 49</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-50">
+                <label for="task-50"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21225.html" target="_blank">Task 50</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-51">
+                <label for="task-51"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9069.html" target="_blank">Task 51</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-52">
+                <label for="task-52"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3058.html" target="_blank">Task 52</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-53">
+                <label for="task-53"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5275.html" target="_blank">Task 53</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-54">
+                <label for="task-54"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18157.html" target="_blank">Task 54</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-55">
+                <label for="task-55"><a href="https://pengzhansun.github.io/annotation-task/html_anns/795.html" target="_blank">Task 55</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-56">
+                <label for="task-56"><a href="https://pengzhansun.github.io/annotation-task/html_anns/282.html" target="_blank">Task 56</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-57">
+                <label for="task-57"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17004.html" target="_blank">Task 57</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-58">
+                <label for="task-58"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13371.html" target="_blank">Task 58</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-59">
+                <label for="task-59"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14212.html" target="_blank">Task 59</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-60">
+                <label for="task-60"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16225.html" target="_blank">Task 60</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-61">
+                <label for="task-61"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13942.html" target="_blank">Task 61</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-62">
+                <label for="task-62"><a href="https://pengzhansun.github.io/annotation-task/html_anns/403.html" target="_blank">Task 62</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-63">
+                <label for="task-63"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7164.html" target="_blank">Task 63</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-64">
+                <label for="task-64"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22816.html" target="_blank">Task 64</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-65">
+                <label for="task-65"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12786.html" target="_blank">Task 65</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-66">
+                <label for="task-66"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17883.html" target="_blank">Task 66</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-67">
+                <label for="task-67"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21480.html" target="_blank">Task 67</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-68">
+                <label for="task-68"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18156.html" target="_blank">Task 68</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-69">
+                <label for="task-69"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25781.html" target="_blank">Task 69</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-70">
+                <label for="task-70"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1537.html" target="_blank">Task 70</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-71">
+                <label for="task-71"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1598.html" target="_blank">Task 71</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-72">
+                <label for="task-72"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11116.html" target="_blank">Task 72</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-73">
+                <label for="task-73"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18842.html" target="_blank">Task 73</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-74">
+                <label for="task-74"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22661.html" target="_blank">Task 74</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-75">
+                <label for="task-75"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21114.html" target="_blank">Task 75</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-76">
+                <label for="task-76"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18431.html" target="_blank">Task 76</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-77">
+                <label for="task-77"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4737.html" target="_blank">Task 77</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-78">
+                <label for="task-78"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26014.html" target="_blank">Task 78</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-79">
+                <label for="task-79"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1816.html" target="_blank">Task 79</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-80">
+                <label for="task-80"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11039.html" target="_blank">Task 80</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-81">
+                <label for="task-81"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4701.html" target="_blank">Task 81</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-82">
+                <label for="task-82"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2689.html" target="_blank">Task 82</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-83">
+                <label for="task-83"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8429.html" target="_blank">Task 83</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-84">
+                <label for="task-84"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1713.html" target="_blank">Task 84</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-85">
+                <label for="task-85"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1957.html" target="_blank">Task 85</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-86">
+                <label for="task-86"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1576.html" target="_blank">Task 86</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-87">
+                <label for="task-87"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4149.html" target="_blank">Task 87</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-88">
+                <label for="task-88"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10831.html" target="_blank">Task 88</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-89">
+                <label for="task-89"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18207.html" target="_blank">Task 89</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-90">
+                <label for="task-90"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20860.html" target="_blank">Task 90</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-91">
+                <label for="task-91"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26185.html" target="_blank">Task 91</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-92">
+                <label for="task-92"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20069.html" target="_blank">Task 92</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-93">
+                <label for="task-93"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21323.html" target="_blank">Task 93</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-94">
+                <label for="task-94"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10150.html" target="_blank">Task 94</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-95">
+                <label for="task-95"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4787.html" target="_blank">Task 95</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-96">
+                <label for="task-96"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18322.html" target="_blank">Task 96</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-97">
+                <label for="task-97"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10559.html" target="_blank">Task 97</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-98">
+                <label for="task-98"><a href="https://pengzhansun.github.io/annotation-task/html_anns/6532.html" target="_blank">Task 98</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-99">
+                <label for="task-99"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2894.html" target="_blank">Task 99</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-100">
+                <label for="task-100"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16261.html" target="_blank">Task 100</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-101">
+                <label for="task-101"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22819.html" target="_blank">Task 101</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-102">
+                <label for="task-102"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16267.html" target="_blank">Task 102</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-103">
+                <label for="task-103"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14923.html" target="_blank">Task 103</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-104">
+                <label for="task-104"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11306.html" target="_blank">Task 104</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-105">
+                <label for="task-105"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19829.html" target="_blank">Task 105</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-106">
+                <label for="task-106"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11418.html" target="_blank">Task 106</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-107">
+                <label for="task-107"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9363.html" target="_blank">Task 107</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-108">
+                <label for="task-108"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26048.html" target="_blank">Task 108</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-109">
+                <label for="task-109"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24011.html" target="_blank">Task 109</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-110">
+                <label for="task-110"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14917.html" target="_blank">Task 110</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-111">
+                <label for="task-111"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23545.html" target="_blank">Task 111</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-112">
+                <label for="task-112"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1811.html" target="_blank">Task 112</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-113">
+                <label for="task-113"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16181.html" target="_blank">Task 113</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-114">
+                <label for="task-114"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24898.html" target="_blank">Task 114</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-115">
+                <label for="task-115"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12123.html" target="_blank">Task 115</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-116">
+                <label for="task-116"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3282.html" target="_blank">Task 116</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-117">
+                <label for="task-117"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24484.html" target="_blank">Task 117</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-118">
+                <label for="task-118"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22143.html" target="_blank">Task 118</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-119">
+                <label for="task-119"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9419.html" target="_blank">Task 119</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-120">
+                <label for="task-120"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2158.html" target="_blank">Task 120</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-121">
+                <label for="task-121"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23335.html" target="_blank">Task 121</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-122">
+                <label for="task-122"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1181.html" target="_blank">Task 122</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-123">
+                <label for="task-123"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9598.html" target="_blank">Task 123</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-124">
+                <label for="task-124"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9024.html" target="_blank">Task 124</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-125">
+                <label for="task-125"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3836.html" target="_blank">Task 125</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-126">
+                <label for="task-126"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5529.html" target="_blank">Task 126</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-127">
+                <label for="task-127"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17147.html" target="_blank">Task 127</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-128">
+                <label for="task-128"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14802.html" target="_blank">Task 128</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-129">
+                <label for="task-129"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12545.html" target="_blank">Task 129</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-130">
+                <label for="task-130"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1717.html" target="_blank">Task 130</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-131">
+                <label for="task-131"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13548.html" target="_blank">Task 131</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-132">
+                <label for="task-132"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17964.html" target="_blank">Task 132</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-133">
+                <label for="task-133"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11059.html" target="_blank">Task 133</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-134">
+                <label for="task-134"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7172.html" target="_blank">Task 134</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-135">
+                <label for="task-135"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9012.html" target="_blank">Task 135</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-136">
+                <label for="task-136"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10902.html" target="_blank">Task 136</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-137">
+                <label for="task-137"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23595.html" target="_blank">Task 137</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-138">
+                <label for="task-138"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12478.html" target="_blank">Task 138</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-139">
+                <label for="task-139"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8061.html" target="_blank">Task 139</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-140">
+                <label for="task-140"><a href="https://pengzhansun.github.io/annotation-task/html_anns/254.html" target="_blank">Task 140</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-141">
+                <label for="task-141"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26104.html" target="_blank">Task 141</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-142">
+                <label for="task-142"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17071.html" target="_blank">Task 142</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-143">
+                <label for="task-143"><a href="https://pengzhansun.github.io/annotation-task/html_anns/294.html" target="_blank">Task 143</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-144">
+                <label for="task-144"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21082.html" target="_blank">Task 144</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-145">
+                <label for="task-145"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17601.html" target="_blank">Task 145</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-146">
+                <label for="task-146"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15252.html" target="_blank">Task 146</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-147">
+                <label for="task-147"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20292.html" target="_blank">Task 147</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-148">
+                <label for="task-148"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21874.html" target="_blank">Task 148</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-149">
+                <label for="task-149"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26118.html" target="_blank">Task 149</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-150">
+                <label for="task-150"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14648.html" target="_blank">Task 150</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-151">
+                <label for="task-151"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16037.html" target="_blank">Task 151</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-152">
+                <label for="task-152"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26161.html" target="_blank">Task 152</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-153">
+                <label for="task-153"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19630.html" target="_blank">Task 153</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-154">
+                <label for="task-154"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8384.html" target="_blank">Task 154</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-155">
+                <label for="task-155"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17480.html" target="_blank">Task 155</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-156">
+                <label for="task-156"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19150.html" target="_blank">Task 156</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-157">
+                <label for="task-157"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13644.html" target="_blank">Task 157</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-158">
+                <label for="task-158"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15373.html" target="_blank">Task 158</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-159">
+                <label for="task-159"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20513.html" target="_blank">Task 159</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-160">
+                <label for="task-160"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22509.html" target="_blank">Task 160</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-161">
+                <label for="task-161"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1825.html" target="_blank">Task 161</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-162">
+                <label for="task-162"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2504.html" target="_blank">Task 162</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-163">
+                <label for="task-163"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1572.html" target="_blank">Task 163</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-164">
+                <label for="task-164"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15709.html" target="_blank">Task 164</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-165">
+                <label for="task-165"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7342.html" target="_blank">Task 165</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-166">
+                <label for="task-166"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8154.html" target="_blank">Task 166</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-167">
+                <label for="task-167"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20003.html" target="_blank">Task 167</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-168">
+                <label for="task-168"><a href="https://pengzhansun.github.io/annotation-task/html_anns/511.html" target="_blank">Task 168</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-169">
+                <label for="task-169"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18001.html" target="_blank">Task 169</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-170">
+                <label for="task-170"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10690.html" target="_blank">Task 170</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-171">
+                <label for="task-171"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10913.html" target="_blank">Task 171</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-172">
+                <label for="task-172"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3388.html" target="_blank">Task 172</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-173">
+                <label for="task-173"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23576.html" target="_blank">Task 173</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-174">
+                <label for="task-174"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21523.html" target="_blank">Task 174</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-175">
+                <label for="task-175"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13160.html" target="_blank">Task 175</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-176">
+                <label for="task-176"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20092.html" target="_blank">Task 176</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-177">
+                <label for="task-177"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7920.html" target="_blank">Task 177</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-178">
+                <label for="task-178"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24321.html" target="_blank">Task 178</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-179">
+                <label for="task-179"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8921.html" target="_blank">Task 179</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-180">
+                <label for="task-180"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9817.html" target="_blank">Task 180</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-181">
+                <label for="task-181"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24791.html" target="_blank">Task 181</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-182">
+                <label for="task-182"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12882.html" target="_blank">Task 182</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-183">
+                <label for="task-183"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3662.html" target="_blank">Task 183</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-184">
+                <label for="task-184"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13634.html" target="_blank">Task 184</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-185">
+                <label for="task-185"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5845.html" target="_blank">Task 185</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-186">
+                <label for="task-186"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19394.html" target="_blank">Task 186</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-187">
+                <label for="task-187"><a href="https://pengzhansun.github.io/annotation-task/html_anns/6582.html" target="_blank">Task 187</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-188">
+                <label for="task-188"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14891.html" target="_blank">Task 188</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-189">
+                <label for="task-189"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13266.html" target="_blank">Task 189</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-190">
+                <label for="task-190"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16909.html" target="_blank">Task 190</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-191">
+                <label for="task-191"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10356.html" target="_blank">Task 191</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-192">
+                <label for="task-192"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5530.html" target="_blank">Task 192</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-193">
+                <label for="task-193"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19008.html" target="_blank">Task 193</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-194">
+                <label for="task-194"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16831.html" target="_blank">Task 194</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-195">
+                <label for="task-195"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24451.html" target="_blank">Task 195</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-196">
+                <label for="task-196"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16066.html" target="_blank">Task 196</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-197">
+                <label for="task-197"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24215.html" target="_blank">Task 197</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-198">
+                <label for="task-198"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13825.html" target="_blank">Task 198</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-199">
+                <label for="task-199"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24372.html" target="_blank">Task 199</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-200">
+                <label for="task-200"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3423.html" target="_blank">Task 200</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-201">
+                <label for="task-201"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18790.html" target="_blank">Task 201</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-202">
+                <label for="task-202"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5872.html" target="_blank">Task 202</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-203">
+                <label for="task-203"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4883.html" target="_blank">Task 203</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-204">
+                <label for="task-204"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12856.html" target="_blank">Task 204</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-205">
+                <label for="task-205"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8762.html" target="_blank">Task 205</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-206">
+                <label for="task-206"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7928.html" target="_blank">Task 206</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-207">
+                <label for="task-207"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25437.html" target="_blank">Task 207</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-208">
+                <label for="task-208"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21237.html" target="_blank">Task 208</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-209">
+                <label for="task-209"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18670.html" target="_blank">Task 209</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-210">
+                <label for="task-210"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25293.html" target="_blank">Task 210</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-211">
+                <label for="task-211"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11176.html" target="_blank">Task 211</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-212">
+                <label for="task-212"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21786.html" target="_blank">Task 212</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-213">
+                <label for="task-213"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5174.html" target="_blank">Task 213</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-214">
+                <label for="task-214"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10679.html" target="_blank">Task 214</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-215">
+                <label for="task-215"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24110.html" target="_blank">Task 215</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-216">
+                <label for="task-216"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11235.html" target="_blank">Task 216</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-217">
+                <label for="task-217"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10986.html" target="_blank">Task 217</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-218">
+                <label for="task-218"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18002.html" target="_blank">Task 218</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-219">
+                <label for="task-219"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17925.html" target="_blank">Task 219</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-220">
+                <label for="task-220"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12376.html" target="_blank">Task 220</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-221">
+                <label for="task-221"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9246.html" target="_blank">Task 221</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-222">
+                <label for="task-222"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2899.html" target="_blank">Task 222</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-223">
+                <label for="task-223"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2945.html" target="_blank">Task 223</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-224">
+                <label for="task-224"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4417.html" target="_blank">Task 224</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-225">
+                <label for="task-225"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10443.html" target="_blank">Task 225</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-226">
+                <label for="task-226"><a href="https://pengzhansun.github.io/annotation-task/html_anns/32.html" target="_blank">Task 226</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-227">
+                <label for="task-227"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23969.html" target="_blank">Task 227</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-228">
+                <label for="task-228"><a href="https://pengzhansun.github.io/annotation-task/html_anns/430.html" target="_blank">Task 228</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-229">
+                <label for="task-229"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9985.html" target="_blank">Task 229</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-230">
+                <label for="task-230"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4395.html" target="_blank">Task 230</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-231">
+                <label for="task-231"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16080.html" target="_blank">Task 231</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-232">
+                <label for="task-232"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3147.html" target="_blank">Task 232</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-233">
+                <label for="task-233"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12653.html" target="_blank">Task 233</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-234">
+                <label for="task-234"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3598.html" target="_blank">Task 234</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-235">
+                <label for="task-235"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12836.html" target="_blank">Task 235</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-236">
+                <label for="task-236"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7469.html" target="_blank">Task 236</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-237">
+                <label for="task-237"><a href="https://pengzhansun.github.io/annotation-task/html_anns/6601.html" target="_blank">Task 237</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-238">
+                <label for="task-238"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12668.html" target="_blank">Task 238</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-239">
+                <label for="task-239"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2789.html" target="_blank">Task 239</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-240">
+                <label for="task-240"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16554.html" target="_blank">Task 240</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-241">
+                <label for="task-241"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26316.html" target="_blank">Task 241</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-242">
+                <label for="task-242"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7531.html" target="_blank">Task 242</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-243">
+                <label for="task-243"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11375.html" target="_blank">Task 243</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-244">
+                <label for="task-244"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16682.html" target="_blank">Task 244</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-245">
+                <label for="task-245"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14421.html" target="_blank">Task 245</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-246">
+                <label for="task-246"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25612.html" target="_blank">Task 246</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-247">
+                <label for="task-247"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8780.html" target="_blank">Task 247</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-248">
+                <label for="task-248"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1987.html" target="_blank">Task 248</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-249">
+                <label for="task-249"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25323.html" target="_blank">Task 249</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-250">
+                <label for="task-250"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12537.html" target="_blank">Task 250</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-251">
+                <label for="task-251"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12229.html" target="_blank">Task 251</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-252">
+                <label for="task-252"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10607.html" target="_blank">Task 252</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-253">
+                <label for="task-253"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22790.html" target="_blank">Task 253</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-254">
+                <label for="task-254"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3145.html" target="_blank">Task 254</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-255">
+                <label for="task-255"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13652.html" target="_blank">Task 255</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-256">
+                <label for="task-256"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14792.html" target="_blank">Task 256</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-257">
+                <label for="task-257"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23371.html" target="_blank">Task 257</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-258">
+                <label for="task-258"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18331.html" target="_blank">Task 258</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-259">
+                <label for="task-259"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7601.html" target="_blank">Task 259</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-260">
+                <label for="task-260"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4521.html" target="_blank">Task 260</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-261">
+                <label for="task-261"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13080.html" target="_blank">Task 261</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-262">
+                <label for="task-262"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11252.html" target="_blank">Task 262</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-263">
+                <label for="task-263"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25365.html" target="_blank">Task 263</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-264">
+                <label for="task-264"><a href="https://pengzhansun.github.io/annotation-task/html_anns/6899.html" target="_blank">Task 264</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-265">
+                <label for="task-265"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15317.html" target="_blank">Task 265</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-266">
+                <label for="task-266"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21939.html" target="_blank">Task 266</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-267">
+                <label for="task-267"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8763.html" target="_blank">Task 267</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-268">
+                <label for="task-268"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3738.html" target="_blank">Task 268</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-269">
+                <label for="task-269"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26002.html" target="_blank">Task 269</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-270">
+                <label for="task-270"><a href="https://pengzhansun.github.io/annotation-task/html_anns/462.html" target="_blank">Task 270</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-271">
+                <label for="task-271"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3609.html" target="_blank">Task 271</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-272">
+                <label for="task-272"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26091.html" target="_blank">Task 272</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-273">
+                <label for="task-273"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12124.html" target="_blank">Task 273</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-274">
+                <label for="task-274"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20829.html" target="_blank">Task 274</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-275">
+                <label for="task-275"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15406.html" target="_blank">Task 275</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-276">
+                <label for="task-276"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2466.html" target="_blank">Task 276</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-277">
+                <label for="task-277"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9915.html" target="_blank">Task 277</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-278">
+                <label for="task-278"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23308.html" target="_blank">Task 278</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-279">
+                <label for="task-279"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7055.html" target="_blank">Task 279</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-280">
+                <label for="task-280"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16008.html" target="_blank">Task 280</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-281">
+                <label for="task-281"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21757.html" target="_blank">Task 281</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-282">
+                <label for="task-282"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8845.html" target="_blank">Task 282</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-283">
+                <label for="task-283"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24744.html" target="_blank">Task 283</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-284">
+                <label for="task-284"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9410.html" target="_blank">Task 284</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-285">
+                <label for="task-285"><a href="https://pengzhansun.github.io/annotation-task/html_anns/6437.html" target="_blank">Task 285</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-286">
+                <label for="task-286"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2515.html" target="_blank">Task 286</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-287">
+                <label for="task-287"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5751.html" target="_blank">Task 287</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-288">
+                <label for="task-288"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24651.html" target="_blank">Task 288</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-289">
+                <label for="task-289"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22097.html" target="_blank">Task 289</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-290">
+                <label for="task-290"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2486.html" target="_blank">Task 290</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-291">
+                <label for="task-291"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25777.html" target="_blank">Task 291</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-292">
+                <label for="task-292"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7237.html" target="_blank">Task 292</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-293">
+                <label for="task-293"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14519.html" target="_blank">Task 293</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-294">
+                <label for="task-294"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17122.html" target="_blank">Task 294</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-295">
+                <label for="task-295"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16408.html" target="_blank">Task 295</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-296">
+                <label for="task-296"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18305.html" target="_blank">Task 296</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-297">
+                <label for="task-297"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4480.html" target="_blank">Task 297</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-298">
+                <label for="task-298"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9447.html" target="_blank">Task 298</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-299">
+                <label for="task-299"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21073.html" target="_blank">Task 299</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-300">
+                <label for="task-300"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23056.html" target="_blank">Task 300</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-301">
+                <label for="task-301"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2734.html" target="_blank">Task 301</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-302">
+                <label for="task-302"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20511.html" target="_blank">Task 302</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-303">
+                <label for="task-303"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17333.html" target="_blank">Task 303</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-304">
+                <label for="task-304"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13807.html" target="_blank">Task 304</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-305">
+                <label for="task-305"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10375.html" target="_blank">Task 305</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-306">
+                <label for="task-306"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15825.html" target="_blank">Task 306</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-307">
+                <label for="task-307"><a href="https://pengzhansun.github.io/annotation-task/html_anns/6434.html" target="_blank">Task 307</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-308">
+                <label for="task-308"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2577.html" target="_blank">Task 308</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-309">
+                <label for="task-309"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10245.html" target="_blank">Task 309</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-310">
+                <label for="task-310"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10711.html" target="_blank">Task 310</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-311">
+                <label for="task-311"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7317.html" target="_blank">Task 311</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-312">
+                <label for="task-312"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21884.html" target="_blank">Task 312</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-313">
+                <label for="task-313"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26045.html" target="_blank">Task 313</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-314">
+                <label for="task-314"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4842.html" target="_blank">Task 314</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-315">
+                <label for="task-315"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22359.html" target="_blank">Task 315</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-316">
+                <label for="task-316"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17700.html" target="_blank">Task 316</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-317">
+                <label for="task-317"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17215.html" target="_blank">Task 317</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-318">
+                <label for="task-318"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15875.html" target="_blank">Task 318</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-319">
+                <label for="task-319"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19551.html" target="_blank">Task 319</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-320">
+                <label for="task-320"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21840.html" target="_blank">Task 320</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-321">
+                <label for="task-321"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15081.html" target="_blank">Task 321</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-322">
+                <label for="task-322"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18496.html" target="_blank">Task 322</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-323">
+                <label for="task-323"><a href="https://pengzhansun.github.io/annotation-task/html_anns/18552.html" target="_blank">Task 323</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-324">
+                <label for="task-324"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3608.html" target="_blank">Task 324</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-325">
+                <label for="task-325"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19412.html" target="_blank">Task 325</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-326">
+                <label for="task-326"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15005.html" target="_blank">Task 326</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-327">
+                <label for="task-327"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7049.html" target="_blank">Task 327</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-328">
+                <label for="task-328"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12510.html" target="_blank">Task 328</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-329">
+                <label for="task-329"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1574.html" target="_blank">Task 329</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-330">
+                <label for="task-330"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25402.html" target="_blank">Task 330</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-331">
+                <label for="task-331"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15509.html" target="_blank">Task 331</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-332">
+                <label for="task-332"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21076.html" target="_blank">Task 332</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-333">
+                <label for="task-333"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24686.html" target="_blank">Task 333</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-334">
+                <label for="task-334"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22295.html" target="_blank">Task 334</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-335">
+                <label for="task-335"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10085.html" target="_blank">Task 335</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-336">
+                <label for="task-336"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5513.html" target="_blank">Task 336</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-337">
+                <label for="task-337"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10602.html" target="_blank">Task 337</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-338">
+                <label for="task-338"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22168.html" target="_blank">Task 338</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-339">
+                <label for="task-339"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23014.html" target="_blank">Task 339</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-340">
+                <label for="task-340"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20928.html" target="_blank">Task 340</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-341">
+                <label for="task-341"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13480.html" target="_blank">Task 341</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-342">
+                <label for="task-342"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19608.html" target="_blank">Task 342</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-343">
+                <label for="task-343"><a href="https://pengzhansun.github.io/annotation-task/html_anns/6849.html" target="_blank">Task 343</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-344">
+                <label for="task-344"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17175.html" target="_blank">Task 344</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-345">
+                <label for="task-345"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17712.html" target="_blank">Task 345</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-346">
+                <label for="task-346"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4059.html" target="_blank">Task 346</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-347">
+                <label for="task-347"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22700.html" target="_blank">Task 347</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-348">
+                <label for="task-348"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15792.html" target="_blank">Task 348</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-349">
+                <label for="task-349"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17460.html" target="_blank">Task 349</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-350">
+                <label for="task-350"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10100.html" target="_blank">Task 350</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-351">
+                <label for="task-351"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19654.html" target="_blank">Task 351</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-352">
+                <label for="task-352"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12472.html" target="_blank">Task 352</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-353">
+                <label for="task-353"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19709.html" target="_blank">Task 353</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-354">
+                <label for="task-354"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2112.html" target="_blank">Task 354</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-355">
+                <label for="task-355"><a href="https://pengzhansun.github.io/annotation-task/html_anns/861.html" target="_blank">Task 355</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-356">
+                <label for="task-356"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22459.html" target="_blank">Task 356</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-357">
+                <label for="task-357"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12783.html" target="_blank">Task 357</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-358">
+                <label for="task-358"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20033.html" target="_blank">Task 358</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-359">
+                <label for="task-359"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11187.html" target="_blank">Task 359</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-360">
+                <label for="task-360"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24026.html" target="_blank">Task 360</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-361">
+                <label for="task-361"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8965.html" target="_blank">Task 361</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-362">
+                <label for="task-362"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25866.html" target="_blank">Task 362</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-363">
+                <label for="task-363"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2316.html" target="_blank">Task 363</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-364">
+                <label for="task-364"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13664.html" target="_blank">Task 364</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-365">
+                <label for="task-365"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3103.html" target="_blank">Task 365</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-366">
+                <label for="task-366"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14980.html" target="_blank">Task 366</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-367">
+                <label for="task-367"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16551.html" target="_blank">Task 367</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-368">
+                <label for="task-368"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23082.html" target="_blank">Task 368</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-369">
+                <label for="task-369"><a href="https://pengzhansun.github.io/annotation-task/html_anns/6227.html" target="_blank">Task 369</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-370">
+                <label for="task-370"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12167.html" target="_blank">Task 370</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-371">
+                <label for="task-371"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10168.html" target="_blank">Task 371</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-372">
+                <label for="task-372"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22170.html" target="_blank">Task 372</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-373">
+                <label for="task-373"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17674.html" target="_blank">Task 373</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-374">
+                <label for="task-374"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25822.html" target="_blank">Task 374</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-375">
+                <label for="task-375"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1810.html" target="_blank">Task 375</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-376">
+                <label for="task-376"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3545.html" target="_blank">Task 376</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-377">
+                <label for="task-377"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23781.html" target="_blank">Task 377</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-378">
+                <label for="task-378"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2250.html" target="_blank">Task 378</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-379">
+                <label for="task-379"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9138.html" target="_blank">Task 379</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-380">
+                <label for="task-380"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14626.html" target="_blank">Task 380</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-381">
+                <label for="task-381"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2791.html" target="_blank">Task 381</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-382">
+                <label for="task-382"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26088.html" target="_blank">Task 382</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-383">
+                <label for="task-383"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1421.html" target="_blank">Task 383</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-384">
+                <label for="task-384"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12735.html" target="_blank">Task 384</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-385">
+                <label for="task-385"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19105.html" target="_blank">Task 385</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-386">
+                <label for="task-386"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19195.html" target="_blank">Task 386</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-387">
+                <label for="task-387"><a href="https://pengzhansun.github.io/annotation-task/html_anns/385.html" target="_blank">Task 387</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-388">
+                <label for="task-388"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3162.html" target="_blank">Task 388</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-389">
+                <label for="task-389"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12889.html" target="_blank">Task 389</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-390">
+                <label for="task-390"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21936.html" target="_blank">Task 390</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-391">
+                <label for="task-391"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10452.html" target="_blank">Task 391</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-392">
+                <label for="task-392"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20260.html" target="_blank">Task 392</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-393">
+                <label for="task-393"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5202.html" target="_blank">Task 393</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-394">
+                <label for="task-394"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10737.html" target="_blank">Task 394</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-395">
+                <label for="task-395"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1942.html" target="_blank">Task 395</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-396">
+                <label for="task-396"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17165.html" target="_blank">Task 396</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-397">
+                <label for="task-397"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21426.html" target="_blank">Task 397</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-398">
+                <label for="task-398"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21030.html" target="_blank">Task 398</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-399">
+                <label for="task-399"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22950.html" target="_blank">Task 399</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-400">
+                <label for="task-400"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21914.html" target="_blank">Task 400</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-401">
+                <label for="task-401"><a href="https://pengzhansun.github.io/annotation-task/html_anns/25096.html" target="_blank">Task 401</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-402">
+                <label for="task-402"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20984.html" target="_blank">Task 402</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-403">
+                <label for="task-403"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14638.html" target="_blank">Task 403</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-404">
+                <label for="task-404"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24221.html" target="_blank">Task 404</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-405">
+                <label for="task-405"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23948.html" target="_blank">Task 405</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-406">
+                <label for="task-406"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20063.html" target="_blank">Task 406</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-407">
+                <label for="task-407"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11435.html" target="_blank">Task 407</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-408">
+                <label for="task-408"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7859.html" target="_blank">Task 408</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-409">
+                <label for="task-409"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9072.html" target="_blank">Task 409</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-410">
+                <label for="task-410"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1407.html" target="_blank">Task 410</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-411">
+                <label for="task-411"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15156.html" target="_blank">Task 411</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-412">
+                <label for="task-412"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15789.html" target="_blank">Task 412</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-413">
+                <label for="task-413"><a href="https://pengzhansun.github.io/annotation-task/html_anns/6429.html" target="_blank">Task 413</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-414">
+                <label for="task-414"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13406.html" target="_blank">Task 414</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-415">
+                <label for="task-415"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8181.html" target="_blank">Task 415</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-416">
+                <label for="task-416"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12566.html" target="_blank">Task 416</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-417">
+                <label for="task-417"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5212.html" target="_blank">Task 417</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-418">
+                <label for="task-418"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24104.html" target="_blank">Task 418</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-419">
+                <label for="task-419"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13815.html" target="_blank">Task 419</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-420">
+                <label for="task-420"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11222.html" target="_blank">Task 420</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-421">
+                <label for="task-421"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11246.html" target="_blank">Task 421</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-422">
+                <label for="task-422"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10459.html" target="_blank">Task 422</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-423">
+                <label for="task-423"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23671.html" target="_blank">Task 423</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-424">
+                <label for="task-424"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3023.html" target="_blank">Task 424</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-425">
+                <label for="task-425"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20681.html" target="_blank">Task 425</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-426">
+                <label for="task-426"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3643.html" target="_blank">Task 426</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-427">
+                <label for="task-427"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21691.html" target="_blank">Task 427</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-428">
+                <label for="task-428"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11346.html" target="_blank">Task 428</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-429">
+                <label for="task-429"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9164.html" target="_blank">Task 429</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-430">
+                <label for="task-430"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7253.html" target="_blank">Task 430</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-431">
+                <label for="task-431"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21822.html" target="_blank">Task 431</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-432">
+                <label for="task-432"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10458.html" target="_blank">Task 432</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-433">
+                <label for="task-433"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3257.html" target="_blank">Task 433</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-434">
+                <label for="task-434"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5681.html" target="_blank">Task 434</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-435">
+                <label for="task-435"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26030.html" target="_blank">Task 435</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-436">
+                <label for="task-436"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19300.html" target="_blank">Task 436</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-437">
+                <label for="task-437"><a href="https://pengzhansun.github.io/annotation-task/html_anns/4325.html" target="_blank">Task 437</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-438">
+                <label for="task-438"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15635.html" target="_blank">Task 438</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-439">
+                <label for="task-439"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17054.html" target="_blank">Task 439</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-440">
+                <label for="task-440"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2518.html" target="_blank">Task 440</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-441">
+                <label for="task-441"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16934.html" target="_blank">Task 441</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-442">
+                <label for="task-442"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14233.html" target="_blank">Task 442</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-443">
+                <label for="task-443"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9464.html" target="_blank">Task 443</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-444">
+                <label for="task-444"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22878.html" target="_blank">Task 444</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-445">
+                <label for="task-445"><a href="https://pengzhansun.github.io/annotation-task/html_anns/17112.html" target="_blank">Task 445</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-446">
+                <label for="task-446"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2808.html" target="_blank">Task 446</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-447">
+                <label for="task-447"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12327.html" target="_blank">Task 447</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-448">
+                <label for="task-448"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23120.html" target="_blank">Task 448</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-449">
+                <label for="task-449"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9093.html" target="_blank">Task 449</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-450">
+                <label for="task-450"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20754.html" target="_blank">Task 450</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-451">
+                <label for="task-451"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23637.html" target="_blank">Task 451</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-452">
+                <label for="task-452"><a href="https://pengzhansun.github.io/annotation-task/html_anns/9535.html" target="_blank">Task 452</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-453">
+                <label for="task-453"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23095.html" target="_blank">Task 453</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-454">
+                <label for="task-454"><a href="https://pengzhansun.github.io/annotation-task/html_anns/21615.html" target="_blank">Task 454</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-455">
+                <label for="task-455"><a href="https://pengzhansun.github.io/annotation-task/html_anns/3358.html" target="_blank">Task 455</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-456">
+                <label for="task-456"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19389.html" target="_blank">Task 456</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-457">
+                <label for="task-457"><a href="https://pengzhansun.github.io/annotation-task/html_anns/24969.html" target="_blank">Task 457</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-458">
+                <label for="task-458"><a href="https://pengzhansun.github.io/annotation-task/html_anns/12459.html" target="_blank">Task 458</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-459">
+                <label for="task-459"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19886.html" target="_blank">Task 459</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-460">
+                <label for="task-460"><a href="https://pengzhansun.github.io/annotation-task/html_anns/15899.html" target="_blank">Task 460</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-461">
+                <label for="task-461"><a href="https://pengzhansun.github.io/annotation-task/html_anns/19724.html" target="_blank">Task 461</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-462">
+                <label for="task-462"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1509.html" target="_blank">Task 462</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-463">
+                <label for="task-463"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1504.html" target="_blank">Task 463</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-464">
+                <label for="task-464"><a href="https://pengzhansun.github.io/annotation-task/html_anns/1769.html" target="_blank">Task 464</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-465">
+                <label for="task-465"><a href="https://pengzhansun.github.io/annotation-task/html_anns/5675.html" target="_blank">Task 465</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-466">
+                <label for="task-466"><a href="https://pengzhansun.github.io/annotation-task/html_anns/16734.html" target="_blank">Task 466</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-467">
+                <label for="task-467"><a href="https://pengzhansun.github.io/annotation-task/html_anns/20533.html" target="_blank">Task 467</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-468">
+                <label for="task-468"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26294.html" target="_blank">Task 468</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-469">
+                <label for="task-469"><a href="https://pengzhansun.github.io/annotation-task/html_anns/23325.html" target="_blank">Task 469</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-470">
+                <label for="task-470"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22880.html" target="_blank">Task 470</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-471">
+                <label for="task-471"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8576.html" target="_blank">Task 471</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-472">
+                <label for="task-472"><a href="https://pengzhansun.github.io/annotation-task/html_anns/13800.html" target="_blank">Task 472</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-473">
+                <label for="task-473"><a href="https://pengzhansun.github.io/annotation-task/html_anns/10276.html" target="_blank">Task 473</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-474">
+                <label for="task-474"><a href="https://pengzhansun.github.io/annotation-task/html_anns/11834.html" target="_blank">Task 474</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-475">
+                <label for="task-475"><a href="https://pengzhansun.github.io/annotation-task/html_anns/7462.html" target="_blank">Task 475</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-476">
+                <label for="task-476"><a href="https://pengzhansun.github.io/annotation-task/html_anns/26172.html" target="_blank">Task 476</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-477">
+                <label for="task-477"><a href="https://pengzhansun.github.io/annotation-task/html_anns/22249.html" target="_blank">Task 477</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-478">
+                <label for="task-478"><a href="https://pengzhansun.github.io/annotation-task/html_anns/14741.html" target="_blank">Task 478</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-479">
+                <label for="task-479"><a href="https://pengzhansun.github.io/annotation-task/html_anns/2016.html" target="_blank">Task 479</a></label>
+            </li>
+        
+
+            <li class="task-item">
+                <input type="checkbox" id="task-480">
+                <label for="task-480"><a href="https://pengzhansun.github.io/annotation-task/html_anns/8592.html" target="_blank">Task 480</a></label>
+            </li>
+        
+        </ul>
+        <button class="save-progress" onclick="saveProgress()">Save Progress</button>
+    </div>
+
+    <script>
+        // Load progress from local storage
+        document.addEventListener('DOMContentLoaded', function () {
+            for (let i = 1; i <= 480; i++) {
+                let checkbox = document.getElementById('task-' + i);
+                if (localStorage.getItem('task-' + i) === 'true') {
+                    checkbox.checked = true;
+                }
+                checkbox.addEventListener('change', function () {
+                    localStorage.setItem('task-' + i, checkbox.checked);
+                });
+            }
+        });
+
+        // Save progress to local storage
+        function saveProgress() {
+            alert('Progress saved! You can resume your work anytime.');
+        }
+    </script>
+</body>
+</html>

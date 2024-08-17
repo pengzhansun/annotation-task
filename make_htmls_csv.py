@@ -2,8 +2,8 @@ import os
 import csv
 
 # Define the folder path
-folder_path = '/home/pengzhan/annotation-task/html_anns'
-url_prefix = "https://pengzhansun.github.io/annotation-task/html_anns"
+folder_path = '/home/pengzhan/annotation-task/tasklist_htmls'
+url_prefix = "https://pengzhansun.github.io/annotation-task/tasklist_htmls"
 
 # Get all files in the folder
 file_names = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
@@ -11,11 +11,8 @@ file_names = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(
 # Combine the URL prefix with each file name using os.path.join
 urls = [os.path.join(url_prefix, file_name) for file_name in file_names]
 
-# Get the first 20 URLs
-urls = urls[:20]
-
 # Save the URLs to a CSV file
-csv_file_path = 'paco_sentences_for_test.csv'  # You can specify the path where you want to save the CSV file
+csv_file_path = 'paco_sentences_tasklist.csv'  # You can specify the path where you want to save the CSV file
 
 with open(csv_file_path, mode='w', newline='') as file:
     writer = csv.writer(file)
